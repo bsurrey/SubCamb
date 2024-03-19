@@ -13,35 +13,33 @@ struct ListView: View {
     @Query private var contracts: [Contract]
     @State private var isEditorPresented = false
     
-    @State private var income: Int = 0
-    @State private var expenses: Int = 0
-    @State private var total: Int = 0
+    //@State private var income: Int = 0
+    //@State private var expenses: Int = 0
+    //@State private var total: Int = 0
+    
+    var total: Int {
+        calculateTotalIncome(contracts: contracts)
+    }
+    
+    var expenses: Int {
+        calculateExpenses(contracts: contracts)
+    }
+    
+    var income: Int {
+        calculateIncome(contracts: contracts)
+    }
     
     var body: some View {
         TabView {
             NavigationView {
                 VStack {
-                    Total(contracts: contracts, income: income, total: total, expenses: expenses)
-                    
                     List {
+                        Section {
+                            Total(contracts: contracts, income: income, total: total, expenses: expenses)
+                        }
+                        
                         ForEach(contracts) { contract in
                             ContractCard(contract: contract)
-                                .listRowSeparator(.hidden)
-                                .background(.clear)
-                                .listRowBackground(
-                                    RoundedRectangle(cornerRadius: 8)
-                                    //.background(.clear)
-                                        .fill(Material.regular) // Use the .fill modifier with Material
-                                        //.foregroundColor(.gray)
-                                        .padding(
-                                            EdgeInsets(
-                                                top: 4,
-                                                leading: 0,
-                                                bottom: 4,
-                                                trailing: 0
-                                            )
-                                        )
-                                )
                         }
                         .onDelete(perform: deleteItems)
                     }
@@ -93,11 +91,7 @@ struct ListView: View {
             }
         }
         .onAppear(perform: {
-            addContract()
-            
-            total = calculateTotalIncome(contracts: contracts)
-            expenses = calculateExpenses(contracts: contracts)
-            income = calculateIncome(contracts: contracts)
+            //addContract()
         })
     }
     

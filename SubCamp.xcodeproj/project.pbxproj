@@ -23,6 +23,7 @@
 		434E0C2F2BA8C8C20035DE9C /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C2E2BA8C8C20035DE9C /* Total.swift */; };
 		434E0C312BA8CABB0035DE9C /* ContractCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C302BA8CABB0035DE9C /* ContractCard.swift */; };
 		434E0C332BA919780035DE9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 434E0C322BA919780035DE9C /* .gitignore */; };
+		434E0C352BA9BB640035DE9C /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 434E0C342BA9BB640035DE9C /* info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		434E0C2E2BA8C8C20035DE9C /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		434E0C302BA8CABB0035DE9C /* ContractCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCard.swift; sourceTree = "<group>"; };
 		434E0C322BA919780035DE9C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		434E0C342BA9BB640035DE9C /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				434E0BFB2BA4AEF90035DE9C /* Assets.xcassets */,
 				434E0BFD2BA4AEF90035DE9C /* Preview Content */,
 				434E0C2C2BA8C84E0035DE9C /* Money.swift */,
+				434E0C342BA9BB640035DE9C /* info.plist */,
 			);
 			path = SubCamp;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434E0C352BA9BB640035DE9C /* info.plist in Resources */,
 				434E0BFF2BA4AEF90035DE9C /* Preview Assets.xcassets in Resources */,
 				434E0C332BA919780035DE9C /* .gitignore in Resources */,
 				434E0BFC2BA4AEF90035DE9C /* Assets.xcassets in Resources */,

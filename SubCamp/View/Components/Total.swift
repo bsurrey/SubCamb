@@ -42,15 +42,7 @@ struct Total: View {
                 Text(formatCurrency(amount: total, currencyCode: "EUR"))
             }
         }
-        .padding()
-
-        .background(
-            RoundedRectangle(cornerRadius: 8)
-                 //.background(.clear)
-                .fill(Material.thin) // Use the .fill modifier with Material
-                //.foregroundColor(.gray)
-        )
-        .padding()
+        .padding(.vertical)
     }
 }
 
