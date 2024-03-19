@@ -12,7 +12,7 @@ import SwiftData
 struct SubCampApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Contract.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct SubCampApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
         }
         .modelContainer(sharedModelContainer)
     }

@@ -15,6 +15,14 @@
 		434E0C092BA4AEFA0035DE9C /* SubCampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C082BA4AEFA0035DE9C /* SubCampTests.swift */; };
 		434E0C132BA4AEFA0035DE9C /* SubCampUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C122BA4AEFA0035DE9C /* SubCampUITests.swift */; };
 		434E0C152BA4AEFA0035DE9C /* SubCampUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C142BA4AEFA0035DE9C /* SubCampUITestsLaunchTests.swift */; };
+		434E0C232BA4BE160035DE9C /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C222BA4BE160035DE9C /* Contract.swift */; };
+		434E0C262BA4BED80035DE9C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C252BA4BED80035DE9C /* ListView.swift */; };
+		434E0C282BA5FB150035DE9C /* CreateEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C272BA5FB150035DE9C /* CreateEditView.swift */; };
+		434E0C2B2BA67FDC0035DE9C /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C2A2BA67FDB0035DE9C /* CurrencyField.swift */; };
+		434E0C2D2BA8C84E0035DE9C /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C2C2BA8C84E0035DE9C /* Money.swift */; };
+		434E0C2F2BA8C8C20035DE9C /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C2E2BA8C8C20035DE9C /* Total.swift */; };
+		434E0C312BA8CABB0035DE9C /* ContractCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0C302BA8CABB0035DE9C /* ContractCard.swift */; };
+		434E0C332BA919780035DE9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 434E0C322BA919780035DE9C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,14 @@
 		434E0C0E2BA4AEFA0035DE9C /* SubCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		434E0C122BA4AEFA0035DE9C /* SubCampUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCampUITests.swift; sourceTree = "<group>"; };
 		434E0C142BA4AEFA0035DE9C /* SubCampUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCampUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		434E0C222BA4BE160035DE9C /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		434E0C252BA4BED80035DE9C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		434E0C272BA5FB150035DE9C /* CreateEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditView.swift; sourceTree = "<group>"; };
+		434E0C2A2BA67FDB0035DE9C /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
+		434E0C2C2BA8C84E0035DE9C /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		434E0C2E2BA8C8C20035DE9C /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
+		434E0C302BA8CABB0035DE9C /* ContractCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCard.swift; sourceTree = "<group>"; };
+		434E0C322BA919780035DE9C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +92,7 @@
 		434E0BE92BA4AEF80035DE9C = {
 			isa = PBXGroup;
 			children = (
+				434E0C322BA919780035DE9C /* .gitignore */,
 				434E0BF42BA4AEF80035DE9C /* SubCamp */,
 				434E0C072BA4AEFA0035DE9C /* SubCampTests */,
 				434E0C112BA4AEFA0035DE9C /* SubCampUITests */,
@@ -96,11 +113,14 @@
 		434E0BF42BA4AEF80035DE9C /* SubCamp */ = {
 			isa = PBXGroup;
 			children = (
+				434E0C242BA4BEC60035DE9C /* View */,
+				434E0C212BA4BDF80035DE9C /* Model */,
 				434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */,
 				434E0BF72BA4AEF80035DE9C /* ContentView.swift */,
 				434E0BF92BA4AEF80035DE9C /* Item.swift */,
 				434E0BFB2BA4AEF90035DE9C /* Assets.xcassets */,
 				434E0BFD2BA4AEF90035DE9C /* Preview Content */,
+				434E0C2C2BA8C84E0035DE9C /* Money.swift */,
 			);
 			path = SubCamp;
 			sourceTree = "<group>";
@@ -128,6 +148,34 @@
 				434E0C142BA4AEFA0035DE9C /* SubCampUITestsLaunchTests.swift */,
 			);
 			path = SubCampUITests;
+			sourceTree = "<group>";
+		};
+		434E0C212BA4BDF80035DE9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				434E0C222BA4BE160035DE9C /* Contract.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		434E0C242BA4BEC60035DE9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				434E0C292BA67FCD0035DE9C /* Components */,
+				434E0C252BA4BED80035DE9C /* ListView.swift */,
+				434E0C272BA5FB150035DE9C /* CreateEditView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		434E0C292BA67FCD0035DE9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				434E0C2A2BA67FDB0035DE9C /* CurrencyField.swift */,
+				434E0C2E2BA8C8C20035DE9C /* Total.swift */,
+				434E0C302BA8CABB0035DE9C /* ContractCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				434E0BFF2BA4AEF90035DE9C /* Preview Assets.xcassets in Resources */,
+				434E0C332BA919780035DE9C /* .gitignore in Resources */,
 				434E0BFC2BA4AEF90035DE9C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,9 +309,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434E0C2F2BA8C8C20035DE9C /* Total.swift in Sources */,
+				434E0C282BA5FB150035DE9C /* CreateEditView.swift in Sources */,
+				434E0C2B2BA67FDC0035DE9C /* CurrencyField.swift in Sources */,
+				434E0C312BA8CABB0035DE9C /* ContractCard.swift in Sources */,
 				434E0BF82BA4AEF80035DE9C /* ContentView.swift in Sources */,
 				434E0BFA2BA4AEF80035DE9C /* Item.swift in Sources */,
+				434E0C262BA4BED80035DE9C /* ListView.swift in Sources */,
 				434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */,
+				434E0C2D2BA8C84E0035DE9C /* Money.swift in Sources */,
+				434E0C232BA4BE160035DE9C /* Contract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
