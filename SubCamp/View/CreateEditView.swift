@@ -24,7 +24,7 @@ struct CreateEditView: View {
     @State private var note: String = ""
     @State private var url: String = ""
     @State private var firstPayment: Date = Date()
-    @State private var amount: Int = 10000000
+    @State private var amount: Int = 0
     @State private var chosenLocale = Locale(identifier: "eu_EU")
     
     private var formatter: NumberFormatter {
@@ -66,7 +66,7 @@ struct CreateEditView: View {
                     
                     Picker(selection: $chosenLocale) {
                         ForEach(locales, id: \.self) {
-                            if let cc = $0.currencyCode, let sym = $0.currencySymbol {
+                            if let cc = $0.currency?.identifier, let sym = $0.currencySymbol {
                                 Text("\(cc) \(sym)")
                             }
                         }
