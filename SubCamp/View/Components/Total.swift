@@ -11,16 +11,20 @@ import SwiftData
 struct Total: View {
     var contracts: [Contract]
     
-    var income: Int
-    var total: Int
-    var expenses: Int
+    var total: Int {
+        calculateTotalIncome(contracts: contracts)
+    }
+    
+    var expenses: Int {
+        calculateExpenses(contracts: contracts)
+    }
+    
+    var income: Int {
+        calculateIncome(contracts: contracts)
+    }
     
     var body: some View {
         VStack {
-            Text("Montly")
-                .font(.footnote)
-                .padding(.bottom, 5.0)
-            
             HStack {
                 Text("Income")
                 
@@ -50,5 +54,5 @@ struct Total: View {
 
 
 #Preview {
-    Total(contracts: [Contract(name: "test", amount: 7237)], income: 372, total: 8238, expenses: 9238)
+    Total(contracts: [Contract(name: "test", amount: 7237)])
 }

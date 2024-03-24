@@ -25,11 +25,11 @@ struct ListView: View {
     
     @AppStorage("groupByType") var groupByType: Bool = true
     @AppStorage("contractSorting") var contractSorting: ContractSorting = .aToZ
-
+    
     @State var sortByNameDesc: Bool = true
     //@State private var contractSorting = ContractSorting.ztoA
     let searchTerm: String
-
+    
     init(
         searchTerm: String,
         sorting: ContractSorting,
@@ -39,7 +39,7 @@ struct ListView: View {
         self.searchTerm = searchTerm
         self.isEditorPresented = isEditorPresented
         self.groupByType = groupByType
-                
+        
         if searchTerm.count > 0 {
             self._contracts = Query(filter: #Predicate<Contract> {
                 $0.name.contains(searchTerm)
@@ -72,39 +72,28 @@ struct ListView: View {
             )
         }
     }
-    
-    var total: Int {
-        calculateTotalIncome(contracts: contracts)
-    }
-    
-    var expenses: Int {
-        calculateExpenses(contracts: contracts)
-    }
-    
-    var income: Int {
-        calculateIncome(contracts: contracts)
-    }
+
     
     var body: some View {
         VStack(spacing: 0) {
             List {
-                Section {
-                    Total(contracts: contracts, income: income, total: total, expenses: expenses)
-                }
-                
                 if groupByType {
-                    Section("Incomes") {
-                        ForEach(contractsIncomes) { i in
-                            ContractCard(contract: i)
+                    if contractsIncomes.count > 0 {
+                        Section("Incomes") {
+                            ForEach(contractsIncomes) { i in
+                                ContractCard(contract: i)
+                            }
+                            .onDelete(perform: deleteItems)
                         }
-                        .onDelete(perform: deleteItems)
                     }
                     
-                    Section("Expenses") {
-                        ForEach(contractsExpenses) { x in
-                            ContractCard(contract: x)
+                    if contractsExpenses.count > 0 {
+                        Section("Expenses") {
+                            ForEach(contractsExpenses) { x in
+                                ContractCard(contract: x)
+                            }
+                            .onDelete(perform: deleteItems)
                         }
-                        .onDelete(perform: deleteItems)
                     }
                 } else {
                     ForEach(contracts) { c in
@@ -114,10 +103,6 @@ struct ListView: View {
                 }
             }
         }
-        .onAppear(perform: {
-            addContract()
-            addContract()
-        })
     }
     
     private func addContract() {

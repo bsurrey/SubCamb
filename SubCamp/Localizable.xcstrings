@@ -30,8 +30,25 @@
         }
       }
     },
+    "Add a new Contract" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Element hinzufügen"
+          }
+        }
+      }
+    },
     "Add Item" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Element hinzufügen"
+          }
+        }
+      }
     },
     "Amount" : {
       "localizations" : {
@@ -39,6 +56,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Summe"
+          }
+        }
+      }
+    },
+    "By clicking here you can create a Contract" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du hier klickst, kannst du einen Vertrag erstellen"
           }
         }
       }
@@ -108,7 +135,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ausgaben"
+            "value" : "Kosten"
           }
         }
       }
@@ -177,6 +204,7 @@
       }
     },
     "Montly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -192,6 +220,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
+          }
+        }
+      }
+    },
+    "No Contracts availible" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Verträge verfügbar"
           }
         }
       }
