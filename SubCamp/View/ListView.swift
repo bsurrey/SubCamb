@@ -10,12 +10,68 @@ import SwiftData
 
 struct ListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var contracts: [Contract]
-    @State private var isEditorPresented = false
     
-    //@State private var income: Int = 0
-    //@State private var expenses: Int = 0
-    //@State private var total: Int = 0
+    @State var isEditorPresented: Bool
+    
+    @Query var contracts: [Contract]
+    
+    @Query(filter: #Predicate<Contract>{contract in
+        contract.isExpense == true
+    }, animation: .smooth) var contractsExpenses: [Contract]
+    
+    @Query(filter: #Predicate<Contract>{contract in
+        contract.isExpense == false
+    }, animation: .smooth) var contractsIncomes: [Contract]
+    
+    @AppStorage("groupByType") var groupByType: Bool = true
+    @AppStorage("contractSorting") var contractSorting: ContractSorting = .aToZ
+
+    @State var sortByNameDesc: Bool = true
+    //@State private var contractSorting = ContractSorting.ztoA
+    let searchTerm: String
+
+    init(
+        searchTerm: String,
+        sorting: ContractSorting,
+        isEditorPresented: Bool,
+        groupByType: Bool
+    ) {
+        self.searchTerm = searchTerm
+        self.isEditorPresented = isEditorPresented
+        self.groupByType = groupByType
+                
+        if searchTerm.count > 0 {
+            self._contracts = Query(filter: #Predicate<Contract> {
+                $0.name.contains(searchTerm)
+            }, sort: [sorting.sortDescriptor], animation: .easeInOut)
+            
+            self._contractsIncomes = Query(filter: #Predicate<Contract> {
+                $0.isExpense == false && $0.name.contains(searchTerm)
+            }, sort: [sorting.sortDescriptor], animation: .easeInOut)
+            
+            // MARK: Expenses
+            self._contractsExpenses = Query(filter: #Predicate<Contract> {
+                $0.isExpense == true && $0.name.contains(searchTerm)
+            }, sort: [sorting.sortDescriptor], animation: .easeInOut)
+        } else {
+            self._contracts = Query(sort: [sorting.sortDescriptor], animation: .easeInOut)
+            
+            self._contractsIncomes = Query(
+                filter: #Predicate<Contract>{contract in
+                    contract.isExpense == false
+                },
+                sort: [sorting.sortDescriptor], 
+                animation: .easeInOut
+            )
+            self._contractsExpenses = Query(
+                filter: #Predicate<Contract>{contract in
+                    contract.isExpense == true
+                },
+                sort: [sorting.sortDescriptor], 
+                animation: .easeInOut
+            )
+        }
+    }
     
     var total: Int {
         calculateTotalIncome(contracts: contracts)
@@ -30,74 +86,43 @@ struct ListView: View {
     }
     
     var body: some View {
-        TabView {
-            NavigationView {
-                VStack {
-                    List {
-                        Section {
-                            Total(contracts: contracts, income: income, total: total, expenses: expenses)
-                        }
-                        
-                        ForEach(contracts) { contract in
-                            ContractCard(contract: contract)
+        VStack(spacing: 0) {
+            List {
+                Section {
+                    Total(contracts: contracts, income: income, total: total, expenses: expenses)
+                }
+                
+                if groupByType {
+                    Section("Incomes") {
+                        ForEach(contractsIncomes) { i in
+                            ContractCard(contract: i)
                         }
                         .onDelete(perform: deleteItems)
                     }
-                }
-                
-                .navigationTitle("Home")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Menu("test", systemImage: "line.3.horizontal.decrease.circle") {
-                            Section {
-                                Button("Duplicate", action: addContract)
-                                Button("Rename", action: addContract)
-                                Button("Delete…", action: addContract)
-                            }
-                            
-                            
-                            Section {
-                                Button("Duplicate", action: addContract)
-                                Button("Rename", action: addContract)
-                                Button("Delete…", action: addContract)
-                            }
-                        }
-                        .menuStyle(ButtonMenuStyle())
-                    }
-                    ToolbarItem(placement: .primaryAction) {
-                        Button("Add", systemImage: "plus") {
-                            isEditorPresented = true
-                        }
-                    }
                     
-                    ToolbarItem(placement: .automatic) {
-                        EditButton()
+                    Section("Expenses") {
+                        ForEach(contractsExpenses) { x in
+                            ContractCard(contract: x)
+                        }
+                        .onDelete(perform: deleteItems)
                     }
+                } else {
+                    ForEach(contracts) { c in
+                        ContractCard(contract: c)
+                    }
+                    .onDelete(perform: deleteItems)
                 }
-                .sheet(isPresented: $isEditorPresented) {
-                    CreateEditView()
-                }
-            }
-            .tabItem {
-                Label("Home", systemImage: "house")
-            }
-            
-            VStack {
-                Text("hajsdh")
-            }
-            .tabItem {
-                Label("Settings", systemImage: "gear")
             }
         }
         .onAppear(perform: {
-            //addContract()
+            addContract()
+            addContract()
         })
     }
     
     private func addContract() {
         withAnimation {
-            let newItem = Contract(name: "Apple One", amount: 1020)
+            let newItem = Contract(name: "Apple One", amount: 1020, isExpense: false)
             modelContext.insert(newItem)
             
             let secondItem = Contract(name: "Netflix", amount: 1020)
@@ -120,6 +145,6 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView()
+    MainView()
         .modelContainer(for: Contract.self, inMemory: true)
 }

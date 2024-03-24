@@ -16,33 +16,35 @@ struct Total: View {
     var expenses: Int
     
     var body: some View {
-        HStack {
-            VStack {
+        VStack {
+            Text("Montly")
+                .font(.footnote)
+                .padding(.bottom, 5.0)
+            
+            HStack {
                 Text("Income")
                 
+                Spacer()
                 
                 Text(formatCurrency(amount: income, currencyCode: "EUR"))
             }
             
-            Spacer()
-            
-            VStack {
+            HStack {
                 Text("Expenses")
                 
+                Spacer()
                 
                 Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
             }
             
-            Spacer()
-            
-            VStack {
-                Text("Total")
+            HStack {
+                Text("Left")
                 
+                Spacer()
                 
                 Text(formatCurrency(amount: total, currencyCode: "EUR"))
             }
         }
-        .padding(.vertical)
     }
 }
 

@@ -25,7 +25,7 @@ struct SubCampApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ListView()
+            MainView()
         }
         .modelContainer(sharedModelContainer)
     }

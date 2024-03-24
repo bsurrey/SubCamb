@@ -48,22 +48,19 @@ struct CreateEditView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(content: {
-                    TextField("Name", text: $name)
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
-                })
+                TextField("Name", text: $name)
+                    .font(.title)
+                    .multilineTextAlignment(.center)
                 
                 Section(content: {
                     Picker("Contract Type", selection: $selectedContractType) {
                         Text("Expense").tag(ContractType.expense)
                         Text("Income").tag(ContractType.income)
                     }
-                    .pickerStyle(PalettePickerStyle())
-                    .frame(maxWidth: .infinity) // Make the picker full width
-                    //.padding(.all, -10) // Adjust this value to reduce default Form padding
-                    .background(Color.clear) // Remove the background
                     
+                })
+                
+                Section(content: {
                     Picker(selection: $chosenLocale) {
                         ForEach(locales, id: \.self) {
                             if let cc = $0.currency?.identifier, let sym = $0.currencySymbol {
@@ -100,13 +97,19 @@ struct CreateEditView: View {
                             .frame(minHeight: 60) // Adjust the size as needed
                     }
                 }
+                
             }
+            .navigationBarTitle("", displayMode: .inline) // the title can be empty string if needed
+
+            
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(editorTitle)
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button("Cancel", role: .cancel) {
+                        dismiss()
+                    }
                 }
                 
-                ToolbarItem(placement: .confirmationAction) {
+                ToolbarItemGroup(placement: .topBarTrailing) {
                     Button("Save") {
                         withAnimation {
                             save()
@@ -115,18 +118,13 @@ struct CreateEditView: View {
                     }
                     .disabled(name == "")
                 }
-                
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel) {
-                        dismiss()
-                    }
-                }
             }
             .onAppear {
                 if let contract {
                     name = contract.name
                 }
             }
+            
         }
     }
     
@@ -139,10 +137,10 @@ struct CreateEditView: View {
     private func save() {
         withAnimation {
             if contract != nil {
-                    // TODOD: editing
+                // TODOD: editing
             } else {
                 let newContract = Contract(
-                    name: name, currency: chosenLocale.identifier, amount: amount, timestamp: Date(), type: selectedContractType
+                    name: name, currency: chosenLocale.identifier, amount: amount, timestamp: Date(), isExpense: selectedContractType == ContractType.expense
                 )
                 modelContext.insert(newContract)
             }

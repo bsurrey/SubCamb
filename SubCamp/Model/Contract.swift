@@ -14,15 +14,18 @@ enum ContractType: Codable {
 
 @Model
 final class Contract {
+    
     var name: String
     var note: String?
     var currency: String?
     var amount: Int
     var firstPayment: Data?
     var timestamp: Date
+    var isExpense: Bool
     var type: ContractType
     
-    init(name: String, note: String? = nil, currency: String? = "EUR", amount: Int, firstPayment: Data? = nil, timestamp: Date = Date(), type: ContractType = .expense) {
+    init(name: String, note: String? = nil, currency: String? = "EUR", amount: Int, firstPayment: Data? = nil, timestamp: Date = Date(), type: ContractType = .expense, isExpense: Bool = true) {
+        
         self.name = name
         self.note = note
         self.currency = currency
@@ -30,6 +33,7 @@ final class Contract {
         self.firstPayment = firstPayment
         self.timestamp = timestamp
         self.type = type
+        self.isExpense = isExpense
     }
     
     // Helper method to get the Locale object from the currency string
