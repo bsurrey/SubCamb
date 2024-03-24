@@ -24,15 +24,19 @@ struct MainView: View {
             VStack {
                 if contracts.isEmpty {
                     ContentUnavailableView {
-                        Label("No Contracts availible", systemImage: "info.circle.fill")
+                        Label("No Contracts availible", systemImage: "tent.2")
                     } description: {
-                        
                         Button {
                             isEditorPresented = true
                         } label: {
-                            Label("Add a new Contract", systemImage: "plus")
+                            Label("Create a new Contract", systemImage: "plus")
                                 .help("By clicking here you can create a Contract")
+                            .padding()
+                            .background(.ultraThickMaterial)
                         }
+                        .cornerRadius(8)
+                        .padding()
+                        
                     }
                 } else {
                     Section {
@@ -50,7 +54,7 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Menu("test", systemImage: "line.3.horizontal.decrease.circle") {
+                    Menu("Sorting and grouping", systemImage: "line.3.horizontal.decrease.circle") {
                         Section(header: Text("Grouping"), content: {
                             Toggle("Group by Type", isOn: $groupByType)
                         })
@@ -64,7 +68,10 @@ struct MainView: View {
                         }
                     }
                     .menuStyle(ButtonMenuStyle())
+                    .disabled(contracts.isEmpty)
                 }
+                
+                
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add", systemImage: "plus") {
                         isEditorPresented = true
