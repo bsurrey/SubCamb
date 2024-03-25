@@ -27,7 +27,6 @@ struct ListView: View {
     @AppStorage("contractSorting") var contractSorting: ContractSorting = .aToZ
     
     @State var sortByNameDesc: Bool = true
-    //@State private var contractSorting = ContractSorting.ztoA
     let searchTerm: String
     
     init(
@@ -79,27 +78,14 @@ struct ListView: View {
             List {
                 if groupByType {
                     if contractsIncomes.count > 0 {
-                        Section("Incomes") {
-                            ForEach(contractsIncomes) { i in
-                                ContractCard(contract: i)
-                            }
-                            .onDelete(perform: deleteItems)
-                        }
+                        contractSectionView(for: contractsIncomes)
                     }
                     
                     if contractsExpenses.count > 0 {
-                        Section("Expenses") {
-                            ForEach(contractsExpenses) { x in
-                                ContractCard(contract: x)
-                            }
-                            .onDelete(perform: deleteItems)
-                        }
+                        contractSectionView(for: contractsExpenses)
                     }
                 } else {
-                    ForEach(contracts) { c in
-                        ContractCard(contract: c)
-                    }
-                    .onDelete(perform: deleteItems)
+                    contractSectionView(for: contracts)
                 }
             }
         }
@@ -118,8 +104,13 @@ struct ListView: View {
         }
     }
     
-    
-    
+    @ViewBuilder
+    private func contractSectionView(for contracts: [Contract]) -> some View {
+        ForEach(contracts) { contract in
+            ContractCard(contract: contract)
+        }
+    }
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -128,6 +119,7 @@ struct ListView: View {
         }
     }
 }
+
 
 #Preview {
     MainView()

@@ -31,6 +31,7 @@
       }
     },
     "Add a new Contract" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -100,6 +101,9 @@
         }
       }
     },
+    "Create a new Contract" : {
+
+    },
     "Currency" : {
       "localizations" : {
         "de" : {
@@ -155,7 +159,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nach Typ sortieren"
+            "value" : "Nach Typ gruppieren"
           }
         }
       }
@@ -170,6 +174,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Income" : {
       "localizations" : {
         "de" : {
@@ -181,6 +188,7 @@
       }
     },
     "Incomes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -254,6 +262,9 @@
         }
       }
     },
+    "Settings" : {
+
+    },
     "Sort Tags by" : {
       "localizations" : {
         "de" : {
@@ -264,7 +275,11 @@
         }
       }
     },
+    "Sorting and grouping" : {
+
+    },
     "test" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

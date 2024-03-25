@@ -15,6 +15,7 @@ struct MainView: View {
     @State private var searchTerm: String = ""
     
     @State private var isEditorPresented = false
+    @State private var isSettingsPresented = false
     @State var groupByType: Bool = true
     
     @Query var contracts: [Contract]
@@ -48,11 +49,18 @@ struct MainView: View {
                     .padding(.all)
                     ListView(searchTerm: searchTerm, sorting: contractSorting, isEditorPresented: isEditorPresented, groupByType: groupByType)
                         .searchable(text: $searchTerm)
+                    
                 }
             }
             .navigationTitle("Contracts")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Settings", systemImage: "gear") {
+                        
+                    }
+                }
+                
                 ToolbarItem(placement: .topBarLeading) {
                     Menu("Sorting and grouping", systemImage: "line.3.horizontal.decrease.circle") {
                         Section(header: Text("Grouping"), content: {
@@ -85,6 +93,9 @@ struct MainView: View {
             }
             .sheet(isPresented: $isEditorPresented) {
                 CreateEditView()
+            }
+            .sheet(isPresented: $isSettingsPresented) {
+                SettingsView()
             }
         }
         
