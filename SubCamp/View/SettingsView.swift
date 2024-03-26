@@ -29,7 +29,6 @@ struct SettingsView: View {
             List {
                 Section {
                     VStack {
-                        Text(config?["CFBundleName"])
                     }
                 }
             }

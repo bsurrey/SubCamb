@@ -43,7 +43,7 @@ func formatCurrency(amount: Int, currencyCode: String) -> String {
 func calculateTotalIncome(contracts: [Contract]) -> Int {
     var totalIncome = 0
     for contract in contracts {
-        if contract.type == ContractType.income {
+        if !contract.isExpense {
             totalIncome += contract.amount
         } else {
             totalIncome -= contract.amount

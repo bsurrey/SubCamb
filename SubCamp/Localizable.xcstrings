@@ -174,9 +174,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Income" : {
       "localizations" : {
         "de" : {
