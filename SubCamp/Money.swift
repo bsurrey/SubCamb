@@ -55,7 +55,7 @@ func calculateTotalIncome(contracts: [Contract]) -> Int {
 func calculateExpenses(contracts: [Contract]) -> Int {
     var totalIncome = 0
     for contract in contracts {
-        if contract.type == ContractType.expense {
+        if contract.isExpense {
             totalIncome -= contract.amount
         }
     }
@@ -65,7 +65,7 @@ func calculateExpenses(contracts: [Contract]) -> Int {
 func calculateIncome(contracts: [Contract]) -> Int {
     var totalIncome = 0
     for contract in contracts {
-        if contract.type == ContractType.income {
+        if !contract.isExpense {
             totalIncome += contract.amount
         }
     }
