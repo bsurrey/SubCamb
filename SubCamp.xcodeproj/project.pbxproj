@@ -27,6 +27,10 @@
 		43B3D1DA2BAF9EF700272ABE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3D1D92BAF9EF700272ABE /* MainView.swift */; };
 		43B3D1DE2BAFB1AB00272ABE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 43B3D1DD2BAFB1AB00272ABE /* Localizable.xcstrings */; };
 		43B3D1E22BB22FB400272ABE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3D1E12BB22FB400272ABE /* SettingsView.swift */; };
+		43F7B9222BB8CD76007F8D86 /* SingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7B9212BB8CD76007F8D86 /* SingleView.swift */; };
+		43F7B9252BB8F737007F8D86 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 43F7B9242BB8F737007F8D86 /* SymbolPicker */; };
+		43F7B9272BB908A0007F8D86 /* CustomColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7B9262BB908A0007F8D86 /* CustomColorPicker.swift */; };
+		43F7B9292BB9101A007F8D86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7B9282BB9101A007F8D86 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		43B3D1D92BAF9EF700272ABE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		43B3D1DD2BAFB1AB00272ABE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		43B3D1E12BB22FB400272ABE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		43B3D1E32BB492BF00272ABE /* SubCamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SubCamp.entitlements; sourceTree = "<group>"; };
+		43F7B9212BB8CD76007F8D86 /* SingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
+		43F7B9262BB908A0007F8D86 /* CustomColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorPicker.swift; sourceTree = "<group>"; };
+		43F7B9282BB9101A007F8D86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F7B9252BB8F737007F8D86 /* SymbolPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +131,11 @@
 		434E0BF42BA4AEF80035DE9C /* SubCamp */ = {
 			isa = PBXGroup;
 			children = (
+				434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */,
+				43B3D1E32BB492BF00272ABE /* SubCamp.entitlements */,
 				434E0C362BA9C1350035DE9C /* Info.plist */,
 				434E0C242BA4BEC60035DE9C /* View */,
 				434E0C212BA4BDF80035DE9C /* Model */,
-				434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */,
 				434E0BF72BA4AEF80035DE9C /* ContentView.swift */,
 				434E0BF92BA4AEF80035DE9C /* Item.swift */,
 				434E0BFB2BA4AEF90035DE9C /* Assets.xcassets */,
@@ -166,6 +176,7 @@
 			children = (
 				434E0C222BA4BE160035DE9C /* Contract.swift */,
 				43B3D1D72BAF847500272ABE /* ContractSorting.swift */,
+				43F7B9282BB9101A007F8D86 /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 				434E0C272BA5FB150035DE9C /* CreateEditView.swift */,
 				43B3D1D92BAF9EF700272ABE /* MainView.swift */,
 				43B3D1E12BB22FB400272ABE /* SettingsView.swift */,
+				43F7B9212BB8CD76007F8D86 /* SingleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 				434E0C2A2BA67FDB0035DE9C /* CurrencyField.swift */,
 				434E0C2E2BA8C8C20035DE9C /* Total.swift */,
 				434E0C302BA8CABB0035DE9C /* ContractCard.swift */,
+				43F7B9262BB908A0007F8D86 /* CustomColorPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -208,6 +221,9 @@
 			dependencies = (
 			);
 			name = SubCamp;
+			packageProductDependencies = (
+				43F7B9242BB8F737007F8D86 /* SymbolPicker */,
+			);
 			productName = SubCamp;
 			productReference = 434E0BF22BA4AEF80035DE9C /* SubCamp.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +297,9 @@
 				de,
 			);
 			mainGroup = 434E0BE92BA4AEF80035DE9C;
+			packageReferences = (
+				43F7B9232BB8F737007F8D86 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+			);
 			productRefGroup = 434E0BF32BA4AEF80035DE9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,8 +346,10 @@
 			files = (
 				434E0C2F2BA8C8C20035DE9C /* Total.swift in Sources */,
 				43B3D1DA2BAF9EF700272ABE /* MainView.swift in Sources */,
+				43F7B9272BB908A0007F8D86 /* CustomColorPicker.swift in Sources */,
 				43B3D1D82BAF847500272ABE /* ContractSorting.swift in Sources */,
 				434E0C282BA5FB150035DE9C /* CreateEditView.swift in Sources */,
+				43F7B9292BB9101A007F8D86 /* Color.swift in Sources */,
 				434E0C2B2BA67FDC0035DE9C /* CurrencyField.swift in Sources */,
 				434E0C312BA8CABB0035DE9C /* ContractCard.swift in Sources */,
 				434E0BF82BA4AEF80035DE9C /* ContentView.swift in Sources */,
@@ -337,6 +358,7 @@
 				434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */,
 				434E0C2D2BA8C84E0035DE9C /* Money.swift in Sources */,
 				434E0C232BA4BE160035DE9C /* Contract.swift in Sources */,
+				43F7B9222BB8CD76007F8D86 /* SingleView.swift in Sources */,
 				43B3D1E22BB22FB400272ABE /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SubCamp/SubCamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SubCamp/Preview Content\"";
@@ -528,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SubCamp/SubCamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SubCamp/Preview Content\"";
@@ -669,6 +693,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43F7B9232BB8F737007F8D86 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/codydlewis/SymbolPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43F7B9242BB8F737007F8D86 /* SymbolPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43F7B9232BB8F737007F8D86 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
+			productName = SymbolPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 434E0BEA2BA4AEF80035DE9C /* Project object */;
 }

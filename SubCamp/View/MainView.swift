@@ -37,19 +37,10 @@ struct MainView: View {
                         }
                         .cornerRadius(8)
                         .padding()
-                        
                     }
                 } else {
-                    Section {
-                        Total(contracts: contracts)
-                            .padding(.all)
-                            .background(Material.regular)
-                    }
-                    .cornerRadius(8)
-                    .padding(.all)
                     ListView(searchTerm: searchTerm, sorting: contractSorting, isEditorPresented: isEditorPresented, groupByType: groupByType)
                         .searchable(text: $searchTerm)
-                    
                 }
             }
             .navigationTitle("Contracts")
@@ -57,7 +48,7 @@ struct MainView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Settings", systemImage: "gear") {
-                        
+                        isSettingsPresented = true
                     }
                 }
                 
@@ -79,26 +70,23 @@ struct MainView: View {
                     .disabled(contracts.isEmpty)
                 }
                 
-                
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add", systemImage: "plus") {
                         isEditorPresented = true
                     }
                 }
-                
-                ToolbarItem(placement: .automatic) {
-                    EditButton()
-                        .disabled(contracts.isEmpty)
-                }
             }
             .sheet(isPresented: $isEditorPresented) {
-                CreateEditView()
+                CreateEditView(contract: nil)
             }
             .sheet(isPresented: $isSettingsPresented) {
                 SettingsView()
             }
         }
-        
+        .onAppear {
+            let newContract = Contract(name: "aks", amount: 734)
+            //modelContext.insert(newContract)
+        }
     }
 }
 

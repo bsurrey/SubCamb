@@ -76,7 +76,12 @@ struct ListView: View {
     var body: some View {
         VStack(spacing: 0) {
             List {
-                if groupByType {
+                Section {
+                    Total(contracts: contracts)
+                }
+                .cornerRadius(8)
+                
+                if !groupByType {
                     if contractsIncomes.count > 0 {
                         contractSectionView(for: contractsIncomes)
                     }
@@ -107,7 +112,11 @@ struct ListView: View {
     @ViewBuilder
     private func contractSectionView(for contracts: [Contract]) -> some View {
         ForEach(contracts) { contract in
-            ContractCard(contract: contract)
+            NavigationLink {
+                SingleView(contract: contract)
+            } label: {
+                ContractCard(contract: contract)
+            }
         }
     }
 

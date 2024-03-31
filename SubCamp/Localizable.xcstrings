@@ -17,6 +17,15 @@
         }
       }
     },
+    "1" : {
+
+    },
+    "1.0.0" : {
+
+    },
+    "2" : {
+
+    },
     "10. Mai" : {
 
     },
@@ -81,6 +90,12 @@
         }
       }
     },
+    "Changelog" : {
+
+    },
+    "Contact" : {
+
+    },
     "Contract Type" : {
       "localizations" : {
         "de" : {
@@ -114,6 +129,24 @@
         }
       }
     },
+    "Default Currency" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete My Data" : {
+
+    },
+    "Edit" : {
+
+    },
+    "Enable Face ID" : {
+
+    },
+    "Enable iCloud" : {
+
+    },
     "Enter your notes here..." : {
       "localizations" : {
         "de" : {
@@ -144,6 +177,12 @@
         }
       }
     },
+    "External Tech" : {
+
+    },
+    "Feature Request" : {
+
+    },
     "First Payment" : {
       "localizations" : {
         "de" : {
@@ -173,6 +212,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Income" : {
       "localizations" : {
@@ -208,6 +250,9 @@
         }
       }
     },
+    "Money" : {
+
+    },
     "Montly" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -238,6 +283,15 @@
           }
         }
       }
+    },
+    "Permanently delete this contract?" : {
+
+    },
+    "Privacy Policy" : {
+
+    },
+    "Rate on App Store" : {
+
     },
     "Save" : {
       "localizations" : {
@@ -295,6 +349,12 @@
           }
         }
       }
+    },
+    "You can't undo this action." : {
+
+    },
+    "Your Data" : {
+
     }
   },
   "version" : "1.0"

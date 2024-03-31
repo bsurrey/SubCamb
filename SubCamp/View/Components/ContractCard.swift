@@ -12,15 +12,23 @@ struct ContractCard: View {
     
     var body: some View {
         HStack {
+            Label("", systemImage: contract.systemIcon ?? "gear")
+                .font(.title3)
+                .labelStyle(.iconOnly)
+                .frame(width: 40, height: 40)
+                .background(in: Circle())
+                .backgroundStyle(contract.getColor().gradient)
+            
             VStack(alignment: .leading) {
                 Text("\(contract.name)")
-                    .font(.system(size: 20))
+                    .font(.system(size: 24))
                     .padding(.bottom, 1.0)
                 
                 Text("10. Mai")
                     .font(.system(size: 12))
             }
-            
+            .padding(.leading, 5)
+
             Spacer()
             
             VStack {

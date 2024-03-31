@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 enum ContractType: Codable {
     case expense, income
@@ -14,26 +15,50 @@ enum ContractType: Codable {
 
 @Model
 final class Contract {
-    
-    var name: String
+    var name: String = ""
     var note: String?
     var currency: String?
-    var amount: Int
+    var amount: Int = 0
     var firstPayment: Data?
-    var timestamp: Date
-    var isExpense: Bool
-    var type: ContractType
+    var timestamp: Date = Date()
+    var isExpense: Bool = true
+    var systemIcon: String?
+    var payDay: Date?
+
+    var red: Float = Color.blue.toRGB().red
+    var green: Float = Color.green.toRGB().green
+    var blue: Float = Color.blue.toRGB().blue
     
-    init(name: String, note: String? = nil, currency: String? = "EUR", amount: Int, firstPayment: Data? = nil, timestamp: Date = Date(), type: ContractType = .expense, isExpense: Bool = true) {
+    init(
+        name: String,
+        note: String? = nil,
+        currency: String? = "EUR",
+        amount: Int,
+        timestamp: Date = Date(),
+        isExpense: Bool = true,
+        payDay: Date = Date(),
+        systemIcon: String? = nil,
         
+        red: Float = Color.blue.toRGB().red,
+        green: Float = Color.blue.toRGB().green,
+        blue: Float = Color.blue.toRGB().blue
+    ) {
         self.name = name
         self.note = note
         self.currency = currency
         self.amount = amount
-        self.firstPayment = firstPayment
         self.timestamp = timestamp
-        self.type = type
         self.isExpense = isExpense
+        self.systemIcon = systemIcon
+        self.payDay = payDay
+        
+        self.red = red
+        self.green = green
+        self.blue = blue
+    }
+    
+    func getColor() -> Color {
+        Color.fromRGB(red: self.red, green: self.green, blue: self.blue)
     }
     
     // Helper method to get the Locale object from the currency string

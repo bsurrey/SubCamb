@@ -1,0 +1,15 @@
+{
+  "originHash" : "1f48d28bf80a153664533a77bf4b78e435d71f78c83a341245884a2d63e3b41d",
+  "pins" : [
+    {
+      "identity" : "symbolpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/codydlewis/SymbolPicker.git",
+      "state" : {
+        "revision" : "c1a5476cf6713a36b855bd619295e7c2f56434ae",
+        "version" : "1.0.3"
+      }
+    }
+  ],
+  "version" : 3
+}
