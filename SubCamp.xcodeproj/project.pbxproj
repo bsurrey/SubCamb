@@ -10,6 +10,9 @@
 		4329D1BB2BBCBA8500046E1E /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BA2BBCBA8500046E1E /* CycleView.swift */; };
 		4329D1BE2BBCBC0600046E1E /* symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BD2BBCBC0600046E1E /* symbols.swift */; };
 		4329D1C02BBCBE6400046E1E /* ContractLabelIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */; };
+		4329D1C22BBD689600046E1E /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1C12BBD689600046E1E /* AppIconProvider.swift */; };
+		4329D1C42BBD68D200046E1E /* AppVersionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1C32BBD68D200046E1E /* AppVersionProvider.swift */; };
+		4329D1C62BBD690200046E1E /* AppVersionInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1C52BBD690200046E1E /* AppVersionInformationView.swift */; };
 		434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */; };
 		434E0BF82BA4AEF80035DE9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF72BA4AEF80035DE9C /* ContentView.swift */; };
 		434E0BFA2BA4AEF80035DE9C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF92BA4AEF80035DE9C /* Item.swift */; };
@@ -57,6 +60,9 @@
 		4329D1BA2BBCBA8500046E1E /* CycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		4329D1BD2BBCBC0600046E1E /* symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = symbols.swift; sourceTree = "<group>"; };
 		4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractLabelIcon.swift; sourceTree = "<group>"; };
+		4329D1C12BBD689600046E1E /* AppIconProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
+		4329D1C32BBD68D200046E1E /* AppVersionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionProvider.swift; sourceTree = "<group>"; };
+		4329D1C52BBD690200046E1E /* AppVersionInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionInformationView.swift; sourceTree = "<group>"; };
 		434E0BF22BA4AEF80035DE9C /* SubCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCampApp.swift; sourceTree = "<group>"; };
 		434E0BF72BA4AEF80035DE9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			children = (
 				434E0C2C2BA8C84E0035DE9C /* Money.swift */,
 				4329D1BD2BBCBC0600046E1E /* symbols.swift */,
+				4329D1C12BBD689600046E1E /* AppIconProvider.swift */,
+				4329D1C32BBD68D200046E1E /* AppVersionProvider.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 				43F7B9262BB908A0007F8D86 /* CustomColorPicker.swift */,
 				4329D1BA2BBCBA8500046E1E /* CycleView.swift */,
 				4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */,
+				4329D1C52BBD690200046E1E /* AppVersionInformationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 				43F7B9272BB908A0007F8D86 /* CustomColorPicker.swift in Sources */,
 				43B3D1D82BAF847500272ABE /* ContractSorting.swift in Sources */,
 				434E0C282BA5FB150035DE9C /* CreateEditView.swift in Sources */,
+				4329D1C22BBD689600046E1E /* AppIconProvider.swift in Sources */,
 				43F7B9292BB9101A007F8D86 /* Color.swift in Sources */,
 				434E0C2B2BA67FDC0035DE9C /* CurrencyField.swift in Sources */,
 				434E0C312BA8CABB0035DE9C /* ContractCard.swift in Sources */,
@@ -374,8 +384,10 @@
 				434E0C262BA4BED80035DE9C /* ListView.swift in Sources */,
 				434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */,
 				4329D1BB2BBCBA8500046E1E /* CycleView.swift in Sources */,
+				4329D1C62BBD690200046E1E /* AppVersionInformationView.swift in Sources */,
 				4329D1BE2BBCBC0600046E1E /* symbols.swift in Sources */,
 				434E0C2D2BA8C84E0035DE9C /* Money.swift in Sources */,
+				4329D1C42BBD68D200046E1E /* AppVersionProvider.swift in Sources */,
 				434E0C232BA4BE160035DE9C /* Contract.swift in Sources */,
 				4329D1C02BBCBE6400046E1E /* ContractLabelIcon.swift in Sources */,
 				43F7B9222BB8CD76007F8D86 /* SingleView.swift in Sources */,

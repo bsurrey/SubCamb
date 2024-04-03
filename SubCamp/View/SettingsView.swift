@@ -12,8 +12,12 @@ struct SettingsView: View {
     
     @AppStorage("iCloudEnabled") var iCloudEnabled: Bool = false
     @AppStorage("enableFaceid") var enableFaceid: Bool = false
+    
+    @AppStorage("designIconGradient") var designIconGradient: Bool = false
+    @AppStorage("designIconRound") var designIconRound: Bool = false
+    
+    @AppStorage("defaultCurrency") var defaultCurrency: Bool = false
 
-            
     init() {
         if let infoPlistPath = Bundle.main.url(forResource: "Info", withExtension: "plist") {
             do {
@@ -30,19 +34,28 @@ struct SettingsView: View {
         
     var body: some View {
         NavigationStack {
+            AppVersionInformationView(
+                versionString: AppVersionProvider.appVersion(),
+                appIcon: AppIconProvider.appIcon()
+            )
+            
             List {
                 Section {
-                    HStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .frame(width: 80, height: 80)
-                        
-                        Spacer()
-                        
-                        VStack {
-                            Text("Money")
-                            Text("1.0.0")
-                        }.font(.title2)
+                    NavigationLink {
+                        List {
+                            ContractCard(contract: Contract(name: "Cat Food", amount: 10_00, systemIcon: "cat.fill"))
+                            
+                            Section {
+                                Toggle("Icon gradient", systemImage: "paintbrush", isOn: $designIconGradient)
+                                
+                                
+                                Toggle("Round icon", systemImage: "paintbrush", isOn: $designIconRound)
+                            }
+                        }
+                    } label: {
+                        Label("Design", systemImage: "paintpalette")
                     }
+
                 }
                 
                 Section {

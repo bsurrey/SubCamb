@@ -20,9 +20,6 @@
     "1" : {
 
     },
-    "1.0.0" : {
-
-    },
     "2" : {
 
     },
@@ -70,6 +67,9 @@
           }
         }
       }
+    },
+    "App version %@" : {
+
     },
     "By clicking here you can create a Contract" : {
       "localizations" : {
@@ -137,6 +137,9 @@
 
     },
     "Delete My Data" : {
+
+    },
+    "Design" : {
 
     },
     "Edit" : {
@@ -219,6 +222,9 @@
     "Here you can enter a note, like something important..." : {
 
     },
+    "Icon gradient" : {
+
+    },
     "Income" : {
       "localizations" : {
         "de" : {
@@ -255,9 +261,6 @@
           }
         }
       }
-    },
-    "Money" : {
-
     },
     "Monthly Cost" : {
 
@@ -306,6 +309,9 @@
 
     },
     "Rate on App Store" : {
+
+    },
+    "Round icon" : {
 
     },
     "Save" : {
@@ -370,6 +376,12 @@
           }
         }
       }
+    },
+    "v%@" : {
+
+    },
+    "Version" : {
+
     },
     "You can't undo this action." : {
 

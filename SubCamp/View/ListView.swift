@@ -81,13 +81,17 @@ struct ListView: View {
                 }
                 .cornerRadius(8)
                 
-                if !groupByType {
+                if groupByType {
                     if contractsIncomes.count > 0 {
-                        contractSectionView(for: contractsIncomes)
+                        Section("Income") {
+                            contractSectionView(for: contractsIncomes)
+                        }
                     }
                     
                     if contractsExpenses.count > 0 {
-                        contractSectionView(for: contractsExpenses)
+                        Section("Expenses") {
+                            contractSectionView(for: contractsExpenses)
+                        }
                     }
                 } else {
                     contractSectionView(for: contracts)
