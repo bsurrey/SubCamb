@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContractLabelIcon: View {
+    var symbol: String = "gear"
+    var selectedColor: Color = .blue
+    var size = 60.0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Label("", systemImage: symbol)
+            .font(.title)
+            .labelStyle(.iconOnly)
+            .frame(width: size, height: size)
+            .background(in:             RoundedRectangle(cornerRadius: 8))
+            .backgroundStyle(selectedColor.gradient)
+        
     }
 }
 

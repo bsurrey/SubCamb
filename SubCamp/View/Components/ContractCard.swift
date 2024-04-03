@@ -21,7 +21,7 @@ struct ContractCard: View {
             
             VStack(alignment: .leading) {
                 Text("\(contract.name)")
-                    .font(.system(size: 24))
+                    .font(.system(size: 20))
                     .padding(.bottom, 1.0)
                 
                 Text("10. Mai")
@@ -33,6 +33,7 @@ struct ContractCard: View {
             
             VStack {
                 Text(formatCurrency(amount: contract.amount, currencyCode: "EUR"))
+                    .font(.footnote)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .foregroundColor(.white)
@@ -49,4 +50,9 @@ struct ContractCard: View {
             )
         )
     }
+}
+
+
+#Preview {
+    ContractCard(contract: Contract(name: "Apple One", currency: "eu_EU", amount: 3500, systemIcon: "gear"))
 }

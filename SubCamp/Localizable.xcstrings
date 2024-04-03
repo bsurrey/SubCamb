@@ -61,6 +61,7 @@
       }
     },
     "Amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -148,6 +149,7 @@
 
     },
     "Enter your notes here..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -184,6 +186,7 @@
 
     },
     "First Payment" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -213,7 +216,7 @@
         }
       }
     },
-    "Hello, World!" : {
+    "Here you can enter a note, like something important..." : {
 
     },
     "Income" : {
@@ -237,6 +240,9 @@
         }
       }
     },
+    "Installment" : {
+
+    },
     "Item at %@" : {
 
     },
@@ -251,6 +257,12 @@
       }
     },
     "Money" : {
+
+    },
+    "Monthly Cost" : {
+
+    },
+    "Monthly Payment day" : {
 
     },
     "Montly" : {
@@ -283,6 +295,9 @@
           }
         }
       }
+    },
+    "Note" : {
+
     },
     "Permanently delete this contract?" : {
 
@@ -339,6 +354,12 @@
           }
         }
       }
+    },
+    "Type" : {
+
+    },
+    "Url" : {
+
     },
     "URL" : {
       "localizations" : {

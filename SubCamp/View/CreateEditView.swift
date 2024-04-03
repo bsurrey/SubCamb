@@ -49,15 +49,6 @@ struct CreateEditView: View {
     @State private var symbol = "hand.point.up.left.fill"
     @State private var showSymbolPicker = false
     @State private var selectedColor = Color.blue
-
-    
-    let symbols = SymbolGroup("Symbols", symbols: [
-         "shield", "rhombus", "seal", "hexagon", "octagon", "diamond", "triangleshape", "heart", "cross.case", "pill", "cross", "cross.vial", "heart.text.square", "bag", "cart", "creditcard", "banknote", "giftcard", "basket", "play", "play.rectangle", "sparkles",
-        "cloud", "flame", "dog", "cat", "fish", "pawprint", "leaf", "camera.macro", "tree", "carrot", "dumbbell", "gym.bag", "figure.outdoor.cycle", "figure.walk", "figure.run", "house", "eyes.inverse", "mustache", "face.smiling.inverse", "car", "fan", "fuelpump", "ev.charger", "key", "powercord", "parkingsign.circle", "tram", "bus", "lightrail", "bicycle", "scooter", "airplane", "network", "bolt.horizontal", "antenna.radiowaves.left.and.right", "gamecontroller", "printer", "display", "laptopcomputer", "tv", "phone"
-
-
-
-    ])
     
     var body: some View {
         NavigationStack {
@@ -68,19 +59,13 @@ struct CreateEditView: View {
                             Button {
                                 showSymbolPicker.toggle()
                             } label: {
-                                Label("", systemImage: symbol)
-                                    .font(.title)
-                                    .labelStyle(.iconOnly)
-                                    .frame(width: 60, height: 60)
-                                    .background(in: Circle())
-                                    .backgroundStyle(selectedColor.gradient)
+                                ContractLabelIcon(symbol: symbol, selectedColor: selectedColor)
                             }
                             .foregroundColor(.white)
                             .sheet(isPresented: $showSymbolPicker) {
-                                SymbolPicker(symbol: $symbol, defaultSymbol: "folder", symbolGroup: symbols)
+                                SymbolPicker(symbol: $symbol, defaultSymbol: "", symbolGroup: getSymbolGroup())
                             }
                         }
-                        
                         TextField("Name", text: $name)
                             .font(.title)
                             .padding(.leading)
@@ -94,6 +79,7 @@ struct CreateEditView: View {
                         Text("Expense").tag(ContractType.expense)
                         Text("Income").tag(ContractType.income)
                     }
+                    .pickerStyle(MenuPickerStyle())
                 })
                 
                 Section(content: {
@@ -106,9 +92,8 @@ struct CreateEditView: View {
                     } label: {
                         Text("Currency")
                     }
-                    
                     HStack {
-                        Text("Amount")
+                        Text("Installment")
                         
                         Spacer()
                         
@@ -117,27 +102,25 @@ struct CreateEditView: View {
                 })
                 
                 Section {
-                    DatePicker("First Payment", selection: $firstPayment, displayedComponents: [.date])
+                    DatePicker("Monthly Payment day", selection: $firstPayment, displayedComponents: [.date])
                     
                     TextField("URL", text: $url)
                     
                     ZStack(alignment: .topLeading) {
                         if note.isEmpty {
-                            Text("Enter your notes here...")
+                            Text("Here you can enter a note, like something important...")
                                 .foregroundColor(.gray)
                                 .padding(.top, 8)
                                 .padding(.leading, 5)
                         }
                         TextEditor(text: $note)
-                            .opacity(note.isEmpty ? 0.25 : 1) // Adjust opacity if needed
-                            .frame(minHeight: 60) // Adjust the size as needed
+                            .opacity(note.isEmpty ? 0.25 : 1)
+                            .frame(minHeight: 60)
                     }
                 }
                 
             }
-            .navigationBarTitle("", displayMode: .inline) // the title can be empty string if needed
-
-            
+            .navigationBarTitle("", displayMode: .inline)
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
                     Button("Cancel", role: .cancel) {

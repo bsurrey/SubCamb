@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4329D1BB2BBCBA8500046E1E /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BA2BBCBA8500046E1E /* CycleView.swift */; };
+		4329D1BE2BBCBC0600046E1E /* symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BD2BBCBC0600046E1E /* symbols.swift */; };
+		4329D1C02BBCBE6400046E1E /* ContractLabelIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */; };
 		434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */; };
 		434E0BF82BA4AEF80035DE9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF72BA4AEF80035DE9C /* ContentView.swift */; };
 		434E0BFA2BA4AEF80035DE9C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0BF92BA4AEF80035DE9C /* Item.swift */; };
@@ -51,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4329D1BA2BBCBA8500046E1E /* CycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
+		4329D1BD2BBCBC0600046E1E /* symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = symbols.swift; sourceTree = "<group>"; };
+		4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractLabelIcon.swift; sourceTree = "<group>"; };
 		434E0BF22BA4AEF80035DE9C /* SubCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434E0BF52BA4AEF80035DE9C /* SubCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCampApp.swift; sourceTree = "<group>"; };
 		434E0BF72BA4AEF80035DE9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4329D1BC2BBCBBDE00046E1E /* util */ = {
+			isa = PBXGroup;
+			children = (
+				434E0C2C2BA8C84E0035DE9C /* Money.swift */,
+				4329D1BD2BBCBC0600046E1E /* symbols.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		434E0BE92BA4AEF80035DE9C = {
 			isa = PBXGroup;
 			children = (
@@ -136,12 +151,10 @@
 				434E0C362BA9C1350035DE9C /* Info.plist */,
 				434E0C242BA4BEC60035DE9C /* View */,
 				434E0C212BA4BDF80035DE9C /* Model */,
-				434E0BF72BA4AEF80035DE9C /* ContentView.swift */,
-				434E0BF92BA4AEF80035DE9C /* Item.swift */,
-				434E0BFB2BA4AEF90035DE9C /* Assets.xcassets */,
 				434E0BFD2BA4AEF90035DE9C /* Preview Content */,
-				434E0C2C2BA8C84E0035DE9C /* Money.swift */,
+				4329D1BC2BBCBBDE00046E1E /* util */,
 				43B3D1DD2BAFB1AB00272ABE /* Localizable.xcstrings */,
+				434E0BFB2BA4AEF90035DE9C /* Assets.xcassets */,
 			);
 			path = SubCamp;
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 				434E0C222BA4BE160035DE9C /* Contract.swift */,
 				43B3D1D72BAF847500272ABE /* ContractSorting.swift */,
 				43F7B9282BB9101A007F8D86 /* Color.swift */,
+				434E0BF92BA4AEF80035DE9C /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 				43B3D1D92BAF9EF700272ABE /* MainView.swift */,
 				43B3D1E12BB22FB400272ABE /* SettingsView.swift */,
 				43F7B9212BB8CD76007F8D86 /* SingleView.swift */,
+				434E0BF72BA4AEF80035DE9C /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +216,8 @@
 				434E0C2E2BA8C8C20035DE9C /* Total.swift */,
 				434E0C302BA8CABB0035DE9C /* ContractCard.swift */,
 				43F7B9262BB908A0007F8D86 /* CustomColorPicker.swift */,
+				4329D1BA2BBCBA8500046E1E /* CycleView.swift */,
+				4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -356,8 +373,11 @@
 				434E0BFA2BA4AEF80035DE9C /* Item.swift in Sources */,
 				434E0C262BA4BED80035DE9C /* ListView.swift in Sources */,
 				434E0BF62BA4AEF80035DE9C /* SubCampApp.swift in Sources */,
+				4329D1BB2BBCBA8500046E1E /* CycleView.swift in Sources */,
+				4329D1BE2BBCBC0600046E1E /* symbols.swift in Sources */,
 				434E0C2D2BA8C84E0035DE9C /* Money.swift in Sources */,
 				434E0C232BA4BE160035DE9C /* Contract.swift in Sources */,
+				4329D1C02BBCBE6400046E1E /* ContractLabelIcon.swift in Sources */,
 				43F7B9222BB8CD76007F8D86 /* SingleView.swift in Sources */,
 				43B3D1E22BB22FB400272ABE /* SettingsView.swift in Sources */,
 			);
