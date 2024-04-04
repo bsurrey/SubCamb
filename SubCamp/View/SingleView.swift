@@ -35,7 +35,7 @@ struct SingleView: View {
     
     // Function to delete the contract
     private func deleteContract() {
-        let context = contract.modelContext
+        // let context = contract.modelContext
                 
         if let context = contract.modelContext {
             context.delete(contract)

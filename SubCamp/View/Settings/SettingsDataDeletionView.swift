@@ -46,7 +46,7 @@ struct SettingsDataDeletionView: View {
         // You may also want to delete files from the app's document directory or other directories if applicable
         
         do {
-            // try modelContext.delete(model: Contract.self)
+            try modelContext.delete(model: Contract.self)
         } catch {
             print("Failed to clear all Country and City data.")
         }

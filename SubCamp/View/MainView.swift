@@ -83,10 +83,6 @@ struct MainView: View {
                 SettingsView()
             }
         }
-        .onAppear {
-            let newContract = Contract(name: "aks", amount: 734)
-            //modelContext.insert(newContract)
-        }
     }
 }
 
