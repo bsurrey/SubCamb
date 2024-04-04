@@ -10,13 +10,19 @@ import SwiftUI
 struct SettingsView: View {
     var config: [String: Any]?
     
+    @Environment(\.dismiss) private var dismiss
+    
     @AppStorage("iCloudEnabled") var iCloudEnabled: Bool = false
     @AppStorage("enableFaceid") var enableFaceid: Bool = false
     
-    @AppStorage("designIconGradient") var designIconGradient: Bool = false
-    @AppStorage("designIconRound") var designIconRound: Bool = false
-    
-    @AppStorage("defaultCurrency") var defaultCurrency: Bool = false
+    @AppStorage("defaultCurrencyLocaleIdentifier") var defaultCurrencyLocaleIdentifier: String = "en_EU"
+
+    private let locales = [
+        Locale(identifier: "en_EU"), // English with Euro
+        Locale(identifier: "us_US"),  // United States Dollar
+        Locale(identifier: "ja_JP"),  // Japanese Yen
+        Locale(identifier: "gb_GB")   // British Pound Sterling
+    ]
 
     init() {
         if let infoPlistPath = Bundle.main.url(forResource: "Info", withExtension: "plist") {
@@ -34,48 +40,68 @@ struct SettingsView: View {
         
     var body: some View {
         NavigationStack {
-            AppVersionInformationView(
-                versionString: AppVersionProvider.appVersion(),
-                appIcon: AppIconProvider.appIcon()
-            )
-            
             List {
                 Section {
-                    NavigationLink {
-                        List {
-                            ContractCard(contract: Contract(name: "Cat Food", amount: 10_00, systemIcon: "cat.fill"))
-                            
-                            Section {
-                                Toggle("Icon gradient", systemImage: "paintbrush", isOn: $designIconGradient)
-                                
-                                
-                                Toggle("Round icon", systemImage: "paintbrush", isOn: $designIconRound)
+                    HStack(content: {
+                        Spacer()
+                        
+                        AppVersionInformationView(
+                            versionString: AppVersionProvider.appVersion(),
+                            appIcon: AppIconProvider.appIcon(),
+                            appName: AppNameProvider.appName()
+                        )
+                        
+                        Spacer()
+                    })
+                }
+                .listRowBackground(Color.clear)
+
+                
+                Section {
+                    // Label("iCloud status", systemImage: iCloudEnabled ? "icloud.fill" : "icloud")
+                    
+                    Toggle("Enable Face ID", systemImage: "faceid", isOn: $enableFaceid)
+                    Picker(selection: $defaultCurrencyLocaleIdentifier) {
+                        ForEach(locales, id: \.self) { locale in
+                            if let cc = locale.currency?.identifier, let sym = locale.currencySymbol {
+                                Text("\(cc) \(sym)")
+                                    .tag(cc) // Tagging with currency identifier
                             }
                         }
                     } label: {
-                        Label("Design", systemImage: "paintpalette")
+                        Label("Default currency", systemImage: "eurosign")
+                    }
+                }
+                
+                Section {
+                    NavigationLink {
+                        SettingsLookAndFeelView()
+                    } label: {
+                        Label("Look & Feel", systemImage: "paintpalette")
                     }
 
                 }
                 
-                Section {
-                    Toggle("Enable iCloud", systemImage: iCloudEnabled ? "icloud.fill" : "icloud", isOn: $iCloudEnabled)
-                    Toggle("Enable Face ID", systemImage: "faceid", isOn: $enableFaceid)
-                    Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: Text("Default Currency")) {
-                        /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                        /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+                Section("Data") {
+                    NavigationLink(destination: {
+                        SettingsPrivacyPolicy()
+                    }) {
+                        Label("Privacy Policy", systemImage: "hand.raised")
                     }
+                    NavigationLink {
+                        SettingsDataExportView()
+                    } label: {
+                        Label("Data export", systemImage: "square.and.arrow.up")
+                    }
+                    NavigationLink {
+                        SettingsDataDeletionView()
+                    } label: {
+                        Label("Delete my data", systemImage: "trash")
+                            
+                    }.tint(.red)
                 }
                 
-                Section("Your Data") {
-                    Text("Privacy Policy")
-                    Button("Delete My Data", systemImage: "gear") {
-                        
-                    }
-                }
-                
-                
-                
+                /*
                 Section {
                     Text("Changelog")
                     Text("External Tech")
@@ -86,7 +112,17 @@ struct SettingsView: View {
                     Text("Feature Request")
                     Text("Rate on App Store")
                 }
+                 */
             }
+            .toolbar(content: {
+                ToolbarItem(id: "Close", placement: .topBarTrailing) {
+                    Button(action: {dismiss()}, label: {
+                        Label("close", systemImage: "xmark")
+                    })
+                }
+            })
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

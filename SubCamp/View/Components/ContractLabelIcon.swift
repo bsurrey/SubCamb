@@ -24,7 +24,6 @@ struct ContractLabelIcon: View {
             .foregroundColor(.white)
             .conditionaBackgroundShape(isCicrle: designIconRound)
             .conditionalBackgroundStyle(isGradient: designIconGradient, color: selectedColor)
-
     }
 }
 

@@ -79,7 +79,7 @@ struct CreateEditView: View {
                         Text("Expense").tag(ContractType.expense)
                         Text("Income").tag(ContractType.income)
                     }
-                    .pickerStyle(MenuPickerStyle())
+                    //.pickerStyle(MenuPickerStyle())
                 })
                 
                 Section(content: {
@@ -87,6 +87,7 @@ struct CreateEditView: View {
                         ForEach(locales, id: \.self) {
                             if let cc = $0.currency?.identifier, let sym = $0.currencySymbol {
                                 Text("\(cc) \(sym)")
+                                    .tag($0.currency?.identifier)
                             }
                         }
                     } label: {

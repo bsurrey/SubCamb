@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContractCard: View {
     var contract: Contract
-    
+    @AppStorage("designColoredBackgroundAmounts") var designColoredBackgroundAmounts: Bool = true
+    @AppStorage("designColoredAmounts") var designColoredAmounts: Bool = true
+    @Environment(\.colorScheme) var colorScheme
+
+
     var body: some View {
         HStack {
             ContractLabelIcon(symbol: contract.systemIcon ?? "exclamationmark.triangle.fill", selectedColor: contract.getColor(), size: 40, font: .title3)
@@ -28,12 +32,18 @@ struct ContractCard: View {
             
             VStack {
                 Text(formatCurrency(amount: contract.amount, currencyCode: "EUR"))
-                    .font(.footnote)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
-                    .foregroundColor(.white)
+                    .foregroundColor(
+                        (designColoredBackgroundAmounts ? .white : (
+                            designColoredAmounts ?
+                                (contract.isExpense ? .red : .green) :
+                                    (colorScheme == .dark ? .white : .black)
+                                )
+                        )
+                    )
             }
-            .background(contract.isExpense ? .red : .green)
+            .background(designColoredBackgroundAmounts ? contract.isExpense ? .red : .green : .clear)
             .cornerRadius(8)
         }
         .padding(

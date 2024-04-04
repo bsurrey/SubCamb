@@ -17,12 +17,6 @@
         }
       }
     },
-    "1" : {
-
-    },
-    "2" : {
-
-    },
     "10. Mai" : {
 
     },
@@ -91,10 +85,16 @@
         }
       }
     },
-    "Changelog" : {
+    "Clicking the button deletes all data in the app and if activated, in iCloud." : {
 
     },
-    "Contact" : {
+    "close" : {
+
+    },
+    "Colored Amounts" : {
+
+    },
+    "Colored Backgrounds for Amounts" : {
 
     },
     "Contract Type" : {
@@ -130,25 +130,31 @@
         }
       }
     },
-    "Default Currency" : {
+    "Data" : {
+
+    },
+    "Data export" : {
+
+    },
+    "Default currency" : {
 
     },
     "Delete" : {
 
     },
-    "Delete My Data" : {
+    "Delete All App Data" : {
 
     },
-    "Design" : {
+    "Delete All App Data?" : {
+
+    },
+    "Delete my data" : {
 
     },
     "Edit" : {
 
     },
     "Enable Face ID" : {
-
-    },
-    "Enable iCloud" : {
 
     },
     "Enter your notes here..." : {
@@ -182,12 +188,6 @@
         }
       }
     },
-    "External Tech" : {
-
-    },
-    "Feature Request" : {
-
-    },
     "First Payment" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -219,10 +219,16 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Here you can enter a note, like something important..." : {
 
     },
     "Icon gradient" : {
+
+    },
+    "If iCloud is enabled, your data may be stored in iCloud. For more information, please refer to Apple's iCloud Privacy Policy." : {
 
     },
     "Income" : {
@@ -262,6 +268,9 @@
         }
       }
     },
+    "Look & Feel" : {
+
+    },
     "Monthly Cost" : {
 
     },
@@ -299,6 +308,9 @@
         }
       }
     },
+    "No data is collected in this application. Everything stays on your device." : {
+
+    },
     "Note" : {
 
     },
@@ -306,9 +318,6 @@
 
     },
     "Privacy Policy" : {
-
-    },
-    "Rate on App Store" : {
 
     },
     "Round icon" : {
@@ -361,6 +370,9 @@
         }
       }
     },
+    "This action will delete all data associated with the app. Are you sure you want to continue?" : {
+
+    },
     "Type" : {
 
     },
@@ -384,9 +396,6 @@
 
     },
     "You can't undo this action." : {
-
-    },
-    "Your Data" : {
 
     }
   },

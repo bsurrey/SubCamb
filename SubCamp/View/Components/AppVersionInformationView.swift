@@ -10,31 +10,32 @@ import SwiftUI
 struct AppVersionInformationView: View {
     let versionString: String
     let appIcon: String
+    let appName: String
     
     var body: some View {
-        VStack(alignment: .center, spacing: 8) {
+        VStack(alignment: .center, spacing: 16) {
             // App icons can only be retrieved as named `UIImage`s
             // https://stackoverflow.com/a/62064533/17421764
             if let image = UIImage(named: appIcon) {
                 Image(uiImage: image)
-                    .resizable()
+                    //.resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .shadow(radius: 1)
             }
+            
+            Text("\(appName)")
                         
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Text("Version")
                     .bold()
                 
                 Text("v\(versionString)")
-                    .multilineTextAlignment(.center)
             }
             .multilineTextAlignment(.center)
             .font(.caption)
             .foregroundColor(.primary)
         }
-        .fixedSize()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("App version \(versionString)")
     }
@@ -43,6 +44,7 @@ struct AppVersionInformationView: View {
 #Preview {
     AppVersionInformationView(
         versionString: AppVersionProvider.appVersion(),
-        appIcon: AppIconProvider.appIcon()
+        appIcon: AppIconProvider.appIcon(),
+        appName: AppNameProvider.appName()
     )
 }
