@@ -16,6 +16,3 @@ enum AppNameProvider {
         return version
     }
 }
-
-
-
