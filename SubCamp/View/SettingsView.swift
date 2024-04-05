@@ -60,7 +60,11 @@ struct SettingsView: View {
                 Section {
                     // Label("iCloud status", systemImage: iCloudEnabled ? "icloud.fill" : "icloud")
                     
-                    Toggle("Enable Face ID", systemImage: "faceid", isOn: $enableFaceid)
+                    Toggle(isOn: $enableFaceid, label: {
+                        Label("Enable Face ID", systemImage: "faceid")
+                            .labelStyle(ColorfulIconLabelStyle(.green))
+                    })
+                    
                     Picker(selection: $defaultCurrencyLocaleIdentifier) {
                         ForEach(locales, id: \.self) { locale in
                             if let cc = locale.currency?.identifier, let sym = locale.currencySymbol {
@@ -70,6 +74,7 @@ struct SettingsView: View {
                         }
                     } label: {
                         Label("Default currency", systemImage: "eurosign")
+                            .labelStyle(ColorfulIconLabelStyle(.blue))
                     }
                 }
                 
@@ -78,25 +83,29 @@ struct SettingsView: View {
                         SettingsLookAndFeelView()
                     } label: {
                         Label("Look & Feel", systemImage: "paintpalette")
+                            .labelStyle(ColorfulIconLabelStyle(.indigo))
                     }
 
                 }
                 
-                Section("Data") {
+                Section {
                     NavigationLink(destination: {
                         SettingsPrivacyPolicy()
                     }) {
                         Label("Privacy Policy", systemImage: "hand.raised")
+                            .labelStyle(ColorfulIconLabelStyle(.blue))
                     }
                     NavigationLink {
                         SettingsDataExportView()
                     } label: {
                         Label("Data export", systemImage: "square.and.arrow.up")
+                            .labelStyle(ColorfulIconLabelStyle(.blue))
                     }
                     NavigationLink {
                         SettingsDataDeletionView()
                     } label: {
                         Label("Delete my data", systemImage: "trash")
+                            .labelStyle(ColorfulIconLabelStyle(.red))
                             
                     }.tint(.red)
                 }

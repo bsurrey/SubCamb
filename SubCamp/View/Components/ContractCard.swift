@@ -22,9 +22,11 @@ struct ContractCard: View {
                 Text("\(contract.name)")
                     .font(.system(size: 20))
                     .padding(.bottom, 1.0)
-                
-                Text("10. Mai")
-                    .font(.system(size: 12))
+
+                if contract.payDay != nil {
+                    Text("\(contract.payDay ?? Date(), format: Date.FormatStyle(date: .abbreviated, time: .none))")
+                        .font(.system(size: 12))
+                }
             }
             .padding(.leading, 5)
 

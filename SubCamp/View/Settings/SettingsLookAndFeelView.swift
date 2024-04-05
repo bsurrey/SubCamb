@@ -28,11 +28,23 @@ struct SettingsLookAndFeelView: View {
             ContractCard(contract: Contract.demoExpense)
             
             Section {
-                Toggle("Icon gradient", systemImage: "slider.horizontal.3", isOn: $designIconGradient)
-                Toggle("Round icon", systemImage: designIconRound ? "circle.fill" : "circle", isOn: $designIconRound)
-                Toggle("Colored Backgrounds for Amounts", systemImage: designColoredBackgroundAmounts ? "rectangle.fill" :  "rectangle", isOn: $designColoredBackgroundAmounts)
+                Toggle(isOn: $designIconGradient, label: {
+                    Label("Icon gradient", systemImage: "slider.horizontal.3")
+                        .labelStyle(ColorfulIconLabelStyle(.indigo))
+                })
+                Toggle(isOn: $designIconRound, label: {
+                    Label("Round icon", systemImage: designIconRound ? "circle.fill" : "circle")
+                        .labelStyle(ColorfulIconLabelStyle(.indigo))
+                })
+                Toggle(isOn: $designColoredBackgroundAmounts, label: {
+                    Label("Colored Backgrounds for Amounts", systemImage: designColoredBackgroundAmounts ? "rectangle.fill" :  "rectangle")
+                        .labelStyle(ColorfulIconLabelStyle(.indigo))
+                })
                 if !designColoredBackgroundAmounts {
-                    Toggle("Colored Amounts", systemImage: "textformat.12", isOn: $designColoredAmounts)
+                    Toggle(isOn: $designColoredAmounts, label: {
+                        Label("Colored Amounts", systemImage: "textformat.12")
+                            .labelStyle(ColorfulIconLabelStyle(.indigo))
+                    })
                 }
             }
             

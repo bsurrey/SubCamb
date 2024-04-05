@@ -7,6 +7,16 @@
     "%@" : {
 
     },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
     "%@ %@" : {
       "localizations" : {
         "en" : {
@@ -16,9 +26,6 @@
           }
         }
       }
-    },
-    "10. Mai" : {
-
     },
     "Add" : {
       "localizations" : {
@@ -97,7 +104,11 @@
     "Colored Backgrounds for Amounts" : {
 
     },
+    "Contract type" : {
+
+    },
     "Contract Type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -129,9 +140,6 @@
           }
         }
       }
-    },
-    "Data" : {
-
     },
     "Data export" : {
 
@@ -274,9 +282,6 @@
     "Monthly Cost" : {
 
     },
-    "Monthly Payment day" : {
-
-    },
     "Montly" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -314,10 +319,16 @@
     "Note" : {
 
     },
+    "Pay day" : {
+
+    },
     "Permanently delete this contract?" : {
 
     },
     "Privacy Policy" : {
+
+    },
+    "Recurrence" : {
 
     },
     "Round icon" : {

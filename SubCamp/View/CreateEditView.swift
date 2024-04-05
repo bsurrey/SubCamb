@@ -45,6 +45,7 @@ struct CreateEditView: View {
     ]
     
     @State private var selectedContractType: ContractType = .expense
+    @State private var selectedContractRecurrence: ContractRecurrence = .monthly
 
     @State private var symbol = "hand.point.up.left.fill"
     @State private var showSymbolPicker = false
@@ -75,26 +76,30 @@ struct CreateEditView: View {
                 }
                 
                 Section(content: {
-                    Picker("Contract Type", selection: $selectedContractType) {
+                    Picker(selection: $selectedContractType) {
                         Text("Expense").tag(ContractType.expense)
                         Text("Income").tag(ContractType.income)
+                    } label: {
+                        Label("Contract type", systemImage: "tag")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
                     }
-                    //.pickerStyle(MenuPickerStyle())
                 })
                 
                 Section(content: {
                     Picker(selection: $chosenLocale) {
                         ForEach(locales, id: \.self) {
                             if let cc = $0.currency?.identifier, let sym = $0.currencySymbol {
-                                Text("\(cc) \(sym)")
+                                Text("\(cc) - \(sym)")
                                     .tag($0.currency?.identifier)
                             }
                         }
                     } label: {
-                        Text("Currency")
+                        Label("Currency", systemImage: "eurosign")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
                     }
                     HStack {
-                        Text("Installment")
+                        Label("Installment", systemImage: "creditcard")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
                         
                         Spacer()
                         
@@ -102,10 +107,28 @@ struct CreateEditView: View {
                     }
                 })
                 
-                Section {
-                    DatePicker("Monthly Payment day", selection: $firstPayment, displayedComponents: [.date])
+                Section(content: {
+                    DatePicker(selection: $firstPayment, displayedComponents: [.date]) {
+                        Label("Pay day", systemImage: "calendar")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
+                    }
                     
-                    TextField("URL", text: $url)
+                    Picker(selection: $selectedContractRecurrence) {
+                        ForEach(ContractRecurrence.allCases, id: \.self) { recurrence in
+                            Text(recurrence.description).tag(recurrence)
+                        }
+                    } label: {
+                        Label("Recurrence", systemImage: "repeat")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
+                    }
+                    .pickerStyle(NavigationLinkPickerStyle())
+                })
+                
+                Section {
+                    TextField(text: $url) {
+                        Label("URL", systemImage: "link")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
+                    }
                     
                     ZStack(alignment: .topLeading) {
                         if note.isEmpty {

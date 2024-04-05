@@ -24,6 +24,8 @@ final class Contract {
     var isExpense: Bool = true
     var systemIcon: String?
     var payDay: Date?
+    
+    var recurrence: ContractRecurrence?
 
     var red: Float = Color.blue.toRGB().red
     var green: Float = Color.green.toRGB().green
@@ -41,7 +43,9 @@ final class Contract {
         
         red: Float = Color.blue.toRGB().red,
         green: Float = Color.blue.toRGB().green,
-        blue: Float = Color.blue.toRGB().blue
+        blue: Float = Color.blue.toRGB().blue,
+        
+        recurrence: ContractRecurrence = .monthly
     ) {
         self.name = name
         self.note = note
@@ -51,6 +55,8 @@ final class Contract {
         self.isExpense = isExpense
         self.systemIcon = systemIcon
         self.payDay = payDay
+        
+        self.recurrence = recurrence
         
         self.red = red
         self.green = green

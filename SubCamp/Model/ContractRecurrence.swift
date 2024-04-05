@@ -7,14 +7,27 @@
 
 import Foundation
 import SwiftData
-import SwiftUI
 
-enum ContractRepeater: Codable {
+enum ContractRecurrence: String, Codable, CaseIterable {
     case daily
+    case everyTwoDays
     case weekly
-    case biweekly
+    case everyTwoWeeks
     case monthly
-    case quarterly
-    case halfyerly
+    case everyThreeMonths
+    case everySixMonths
     case yearly
+    
+    var description: String {
+        switch self {
+            case .daily: return "Daily"
+            case .everyTwoDays: return "Every Two Days"
+            case .weekly: return "Weekly"
+            case .everyTwoWeeks: return "Every Two Weeks"
+            case .monthly: return "Monthly"
+            case .everyThreeMonths: return "Every Three Months"
+            case .everySixMonths: return "Every Six Months"
+            case .yearly: return "Yearly"
+        }
+    }
 }
