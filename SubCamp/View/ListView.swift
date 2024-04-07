@@ -75,11 +75,11 @@ struct ListView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            
+            Section {
+                Total(contracts: contracts)
+            }
             List {
-                Section {
-                    Total(contracts: contracts)
-                }                
+                                
                 if groupByType {
                     if contractsIncomes.count > 0 {
                         Section {

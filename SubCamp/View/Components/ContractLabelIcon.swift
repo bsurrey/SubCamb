@@ -22,7 +22,7 @@ struct ContractLabelIcon: View {
             .font(font)
             .labelStyle(.iconOnly)
             .frame(width: size, height: size)
-            .foregroundColor(selectedColor)
+            .foregroundColor(.white)
             .conditionaBackgroundShape(isCicrle: designIconRound)
             .conditionalBackgroundStyle(isGradient: designIconGradient, color: selectedColor)
     }
@@ -62,7 +62,7 @@ struct ConditionalBackgroundStyle: ViewModifier {
                 .backgroundStyle(color.gradient)
         } else {
             content
-                .backgroundStyle(color.opacity(0.15))
+                .backgroundStyle(color)
         }
     }
 }

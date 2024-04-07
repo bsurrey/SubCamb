@@ -12,8 +12,8 @@ struct ShapesButton: ButtonStyle {
         configuration.label
             .padding()
             .frame(minWidth: 125, minHeight: 60)
-            .background(Color.blue.opacity(0.15))
-            .foregroundColor(.blue)
+            .background(Color.blue)
+            .foregroundColor(.white)
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .padding(.bottom, 30)
     }

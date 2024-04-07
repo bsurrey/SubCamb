@@ -26,30 +26,25 @@ struct Total: View {
     var body: some View {
         VStack(content: {
             HStack {
-                Label("Income", systemImage: "plus")
-                    .labelStyle(ColorfulIconLabelStyle(.green))
-                                
-                Spacer()
+                GroupBox {
+                    Text(formatCurrency(amount: income, currencyCode: "EUR"))
+                } label: {
+                    Label("Income", systemImage: "plus")
+                }
                 
-                Text(formatCurrency(amount: income, currencyCode: "EUR"))
-            }
-            .padding(.bottom, 6.0)
-
-            
-            HStack {
-                Label("Expenses", systemImage: "minus")
-                    .labelStyle(ColorfulIconLabelStyle(.red))
-                                
-                Spacer()
-                
-                Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
+                GroupBox {
+                    Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
+                        .multilineTextAlignment(.leading)
+                } label: {
+                    Label("Expenses", systemImage: "minus")
+                }
             }
             
             Divider()
                 .padding(.bottom, 6.0)
             
             HStack {
-                Label("Left", systemImage: "equal")
+                Label("Sum", systemImage: "equal")
                     .labelStyle(ColorfulIconLabelStyle(.accentColor))
                 
                 Spacer()
@@ -60,6 +55,7 @@ struct Total: View {
         //.textCase(.uppercase)
         .foregroundColor(.primary)
         //.font(.headline)
+        
     }
 }
 

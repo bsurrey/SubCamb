@@ -285,6 +285,7 @@
 
     },
     "Left" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -389,6 +390,9 @@
       }
     },
     "Sorting and grouping" : {
+
+    },
+    "Sum" : {
 
     },
     "test" : {

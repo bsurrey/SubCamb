@@ -58,11 +58,11 @@ struct ContractButtonCard: View {
                             Label("Delete Contract", systemImage: "trash")
                         }
                     }, label: {
-                        Image(systemName: "ellipsis.circle.fill")
-                            .symbolRenderingMode(.hierarchical)
+                        Label("Menu", systemImage: "ellipsis.circle.fill")
                             .imageScale(.large)
                             .font(.title2)
                             .tint(contract.getColor())
+                            
                     })
                     .menuStyle(.button)
                     .buttonStyle(.borderless)

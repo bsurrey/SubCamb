@@ -23,8 +23,8 @@ struct ColorfulIconLabelStyle: LabelStyle {
         } icon: {
             configuration.icon
                 .imageScale(.medium)
-                .foregroundColor(color)
-                .background(RoundedRectangle(cornerRadius: 7 * size).frame(width: 28 * size, height: 28 * size).foregroundColor(color.opacity(0.15)))
+                .foregroundColor(.white)
+                .background(RoundedRectangle(cornerRadius: 7 * size).frame(width: 28 * size, height: 28 * size).foregroundColor(color))
         }
     }
 }
