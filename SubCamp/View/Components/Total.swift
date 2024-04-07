@@ -24,35 +24,52 @@ struct Total: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(content: {
             HStack {
-                Text("Income")
-                
+                Label("Income", systemImage: "plus")
+                    .labelStyle(ColorfulIconLabelStyle(.green))
+                                
                 Spacer()
                 
                 Text(formatCurrency(amount: income, currencyCode: "EUR"))
             }
+            .padding(.bottom, 6.0)
+
             
             HStack {
-                Text("Expenses")
-                
+                Label("Expenses", systemImage: "minus")
+                    .labelStyle(ColorfulIconLabelStyle(.red))
+                                
                 Spacer()
                 
                 Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
             }
             
+            Divider()
+                .padding(.bottom, 6.0)
+            
             HStack {
-                Text("Left")
+                Label("Left", systemImage: "equal")
+                    .labelStyle(ColorfulIconLabelStyle(.accentColor))
                 
                 Spacer()
                 
                 Text(formatCurrency(amount: total, currencyCode: "EUR"))
             }
-        }
+        })
+        //.textCase(.uppercase)
+        .foregroundColor(.primary)
+        //.font(.headline)
     }
 }
 
 
 #Preview {
-    Total(contracts: [Contract(name: "test", amount: 7237)])
+    List {
+        Total(contracts: [
+            Contract(name: "Cat Food", amount: 2999, isExpense: true),
+            Contract(name: "Dog Food", amount: 4999, isExpense: true),
+            Contract(name: "Icome", amount: 250000, isExpense: false),
+        ])
+    }
 }

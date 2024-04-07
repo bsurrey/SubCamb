@@ -18,10 +18,11 @@ struct ContractLabelIcon: View {
     
     var body: some View {
         Label("", systemImage: symbol)
+            .padding()
             .font(font)
             .labelStyle(.iconOnly)
             .frame(width: size, height: size)
-            .foregroundColor(.white)
+            .foregroundColor(selectedColor)
             .conditionaBackgroundShape(isCicrle: designIconRound)
             .conditionalBackgroundStyle(isGradient: designIconGradient, color: selectedColor)
     }
@@ -46,7 +47,7 @@ struct ConditionalBackgroundShape: ViewModifier {
                 .background(in: Circle())
         } else {
             content
-                .background(in: RoundedRectangle(cornerRadius: 8))
+                .background(in: RoundedRectangle(cornerRadius: 4))
         }
     }
 }
@@ -61,11 +62,11 @@ struct ConditionalBackgroundStyle: ViewModifier {
                 .backgroundStyle(color.gradient)
         } else {
             content
-                .backgroundStyle(color)
+                .backgroundStyle(color.opacity(0.15))
         }
     }
 }
 
 #Preview {
-    ContractLabelIcon()
+    ContractLabelIcon(font: .callout)
 }

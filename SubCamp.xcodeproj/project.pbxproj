@@ -37,6 +37,8 @@
 		434E0C332BA919780035DE9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 434E0C322BA919780035DE9C /* .gitignore */; };
 		437497AA2BC0AC1500BA27E7 /* ContractRecurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437497A92BC0AC1500BA27E7 /* ContractRecurrence.swift */; };
 		437497AD2BC0B09100BA27E7 /* ColorfulIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437497AC2BC0B09100BA27E7 /* ColorfulIconLabelStyle.swift */; };
+		437497AF2BC2235200BA27E7 /* ContractButtonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437497AE2BC2235200BA27E7 /* ContractButtonCard.swift */; };
+		437497B12BC22C0A00BA27E7 /* ShapesButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437497B02BC22C0A00BA27E7 /* ShapesButtonStyle.swift */; };
 		43B3D1D82BAF847500272ABE /* ContractSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3D1D72BAF847500272ABE /* ContractSorting.swift */; };
 		43B3D1DA2BAF9EF700272ABE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3D1D92BAF9EF700272ABE /* MainView.swift */; };
 		43B3D1DE2BAFB1AB00272ABE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 43B3D1DD2BAFB1AB00272ABE /* Localizable.xcstrings */; };
@@ -99,6 +101,8 @@
 		434E0C362BA9C1350035DE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		437497A92BC0AC1500BA27E7 /* ContractRecurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRecurrence.swift; sourceTree = "<group>"; };
 		437497AC2BC0B09100BA27E7 /* ColorfulIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulIconLabelStyle.swift; sourceTree = "<group>"; };
+		437497AE2BC2235200BA27E7 /* ContractButtonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractButtonCard.swift; sourceTree = "<group>"; };
+		437497B02BC22C0A00BA27E7 /* ShapesButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesButtonStyle.swift; sourceTree = "<group>"; };
 		43B3D1D72BAF847500272ABE /* ContractSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractSorting.swift; sourceTree = "<group>"; };
 		43B3D1D92BAF9EF700272ABE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		43B3D1DD2BAFB1AB00272ABE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				4329D1BA2BBCBA8500046E1E /* CycleView.swift */,
 				4329D1BF2BBCBE6400046E1E /* ContractLabelIcon.swift */,
 				4329D1C52BBD690200046E1E /* AppVersionInformationView.swift */,
+				437497AE2BC2235200BA27E7 /* ContractButtonCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				437497AC2BC0B09100BA27E7 /* ColorfulIconLabelStyle.swift */,
+				437497B02BC22C0A00BA27E7 /* ShapesButtonStyle.swift */,
 			);
 			path = styles;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				4329D1CB2BBE0F3200046E1E /* SettingsLookAndFeelView.swift in Sources */,
 				4329D1CF2BBE1E6C00046E1E /* SettingsPrivacyPolicy.swift in Sources */,
 				4329D1D72BBE32CC00046E1E /* AppNameProvider.swift in Sources */,
+				437497B12BC22C0A00BA27E7 /* ShapesButtonStyle.swift in Sources */,
 				434E0C2F2BA8C8C20035DE9C /* Total.swift in Sources */,
 				43B3D1DA2BAF9EF700272ABE /* MainView.swift in Sources */,
 				43F7B9272BB908A0007F8D86 /* CustomColorPicker.swift in Sources */,
@@ -438,6 +445,7 @@
 				4329D1CD2BBE16EC00046E1E /* Contract+DemoData.swift in Sources */,
 				437497AA2BC0AC1500BA27E7 /* ContractRecurrence.swift in Sources */,
 				43F7B9222BB8CD76007F8D86 /* SingleView.swift in Sources */,
+				437497AF2BC2235200BA27E7 /* ContractButtonCard.swift in Sources */,
 				43B3D1E22BB22FB400272ABE /* SettingsView.swift in Sources */,
 				4329D1D32BBE212700046E1E /* SettingsDataDeletionView.swift in Sources */,
 			);

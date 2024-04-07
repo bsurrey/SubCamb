@@ -27,6 +27,19 @@
         }
       }
     },
+    "%@%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "04. April" : {
+
+    },
     "Add" : {
       "localizations" : {
         "de" : {
@@ -156,10 +169,16 @@
     "Delete All App Data?" : {
 
     },
+    "Delete Contract" : {
+
+    },
     "Delete my data" : {
 
     },
     "Edit" : {
+
+    },
+    "Edit Contract" : {
 
     },
     "Enable Face ID" : {
@@ -250,7 +269,6 @@
       }
     },
     "Incomes" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -329,6 +347,9 @@
 
     },
     "Recurrence" : {
+
+    },
+    "Reset" : {
 
     },
     "Round icon" : {

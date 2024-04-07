@@ -16,7 +16,7 @@ struct ContractCard: View {
 
     var body: some View {
         HStack {
-            ContractLabelIcon(symbol: contract.systemIcon ?? "exclamationmark.triangle.fill", selectedColor: contract.getColor(), size: 40, font: .title3)
+            ContractLabelIcon(symbol: contract.systemIcon ?? "exclamationmark.triangle.fill", selectedColor: contract.getColor(), size: 48, font: .title3)
             
             VStack(alignment: .leading) {
                 Text("\(contract.name)")
@@ -28,7 +28,7 @@ struct ContractCard: View {
                         .font(.system(size: 12))
                 }
             }
-            .padding(.leading, 5)
+            .padding(.leading, 8)
 
             Spacer()
             
@@ -48,14 +48,6 @@ struct ContractCard: View {
             .background(designColoredBackgroundAmounts ? contract.isExpense ? .red : .green : .clear)
             .cornerRadius(8)
         }
-        .padding(
-            EdgeInsets(
-                top: 8,
-                leading: 0,
-                bottom: 8,
-                trailing: 0
-            )
-        )
     }
 }
 

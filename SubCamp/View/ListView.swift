@@ -75,22 +75,32 @@ struct ListView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            
             List {
                 Section {
                     Total(contracts: contracts)
-                }
-                .cornerRadius(8)
-                
+                }                
                 if groupByType {
                     if contractsIncomes.count > 0 {
-                        Section("Income") {
+                        Section {
                             contractSectionView(for: contractsIncomes)
+
+                        } header: {
+                            Text("Incomes")
+                                .foregroundColor(.primary)
+                                .font(.title3)
+                                .textCase(.none)
                         }
                     }
                     
                     if contractsExpenses.count > 0 {
-                        Section("Expenses") {
+                        Section {
                             contractSectionView(for: contractsExpenses)
+                        } header: {
+                            Text("Expenses")
+                                .foregroundColor(.primary)
+                                .font(.title3)
+                                .textCase(.none)
                         }
                     }
                 } else {
@@ -116,11 +126,7 @@ struct ListView: View {
     @ViewBuilder
     private func contractSectionView(for contracts: [Contract]) -> some View {
         ForEach(contracts) { contract in
-            NavigationLink {
-                SingleView(contract: contract)
-            } label: {
-                ContractCard(contract: contract)
-            }
+            ContractButtonCard(contract: contract)
         }
     }
 
