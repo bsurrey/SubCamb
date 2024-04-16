@@ -13,18 +13,18 @@ struct ContractButtonCard: View {
     @AppStorage("designColoredBackgroundAmounts") var designColoredBackgroundAmounts: Bool = true
     @AppStorage("designColoredAmounts") var designColoredAmounts: Bool = true
     @Environment(\.colorScheme) var colorScheme
-
+    
     @ScaledMetric(relativeTo: .title2) private var itemSize: CGFloat = 100
     
     // Function to delete the contract
     private func deleteContract() {
         // let context = contract.modelContext
-                
+        
         if let context = contract.modelContext {
             context.delete(contract)
         }
         presentationMode.wrappedValue.dismiss()
-    } 
+    }
     
     
     @Environment(\.presentationMode) var presentationMode
@@ -33,14 +33,22 @@ struct ContractButtonCard: View {
     @State private var userAgreed = false
     @State private var isShowingSheet = false
     
+    // Helper function to format the date
+    func dateString(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMMM" // "01. April" format
+        return dateFormatter.string(from: date)
+    }
+    
     var body: some View {
+        
         
         VStack(spacing: 8) {
             HStack(alignment: .center) {
                 ContractLabelIcon(symbol: contract.systemIcon ?? "exclamationmark.triangle.fill", selectedColor: contract.getColor(), size: 48, font: .callout)
-
+                
                 Text(contract.name)
-                        //.font(.title)
+                //.font(.title)
                 
                 Spacer()
                 
@@ -59,23 +67,27 @@ struct ContractButtonCard: View {
                         }
                     }, label: {
                         Label("Menu", systemImage: "ellipsis.circle.fill")
+                            .padding([.leading, .bottom])
                             .imageScale(.large)
                             .font(.title2)
-                            .tint(contract.getColor())
-                            
+                            .symbolRenderingMode(.hierarchical)
+                            .tint(contract.getColor()).labelStyle(IconOnlyLabelStyle())
+                        
                     })
                     .menuStyle(.button)
                     .buttonStyle(.borderless)
                 }
             }
             HStack {
-                Text("04. April")
-                    .padding(.vertical, 2)
-                    .padding(.horizontal, 10)
-                    .frame(minWidth: 8, minHeight: 6)
-                    .background(contract.getColor().opacity(0.15))
-                    .foregroundColor(contract.getColor())
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                if (contract.payDay != nil) {
+                    Text(dateString(contract.payDay!))
+                        .padding(.vertical, 2)
+                        .padding(.horizontal, 10)
+                        .frame(minWidth: 8, minHeight: 6)
+                        .background(contract.getColor().opacity(0.15))
+                        .foregroundColor(contract.getColor())
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                }
                 
                 Spacer()
                 
@@ -124,7 +136,7 @@ struct ContractButtonCard: View {
             currency: "eu_EU",
             amount: 3500,
             isExpense: false,
-            systemIcon: "gear", 
+            systemIcon: "gear",
             red: Color.red.toRGB().red,
             green: Color.red.toRGB().green,
             blue: Color.red.toRGB().blue
