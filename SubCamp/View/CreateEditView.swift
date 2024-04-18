@@ -49,7 +49,9 @@ struct CreateEditView: View {
 
     @State private var symbol = "hand.point.up.left.fill"
     @State private var showSymbolPicker = false
+    @State private var showTagPicker = false
     @State private var selectedColor = Color.blue
+    @State private var selectedTags: [ContractTag]? = []
     
     var body: some View {
         NavigationStack {
@@ -106,6 +108,16 @@ struct CreateEditView: View {
                         CurrencyField(value: $amount, formatter: formatter)
                     }
                 })
+                
+                Section {
+                    Button(action: {showTagPicker.toggle()}, label: {
+                        Label("Tag", systemImage: "tag")
+                            .labelStyle(ColorfulIconLabelStyle(selectedColor))
+                    })
+                    .sheet(isPresented: $showTagPicker) {
+                        TagPickerView(selectedTags: $selectedTags)
+                    }
+                }
                 
                 Section(content: {
                     DatePicker(selection: $firstPayment, displayedComponents: [.date]) {

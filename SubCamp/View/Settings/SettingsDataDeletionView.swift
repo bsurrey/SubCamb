@@ -15,20 +15,22 @@ struct SettingsDataDeletionView: View {
     
     var body: some View {
         Form {
-            Text("Clicking the button deletes all data in the app and if activated, in iCloud.")
             VStack {
+                Text("Tapping this button will remove all data stored within the application, including records stored in iCloud if enabled.")
+                    .padding(.bottom)
                 Button(action: {
                     showAlert = true
                 }) {
-                    Text("Delete All App Data")
+                    Text("Delete all app data")
                         .foregroundColor(.red)
                 }
             }
+            .navigationTitle("Data deletion")
             .alert(isPresented: $showAlert) {
                 Alert(
-                    title: Text("Delete All App Data?"),
-                    message: Text("This action will delete all data associated with the app. Are you sure you want to continue?"),
-                    primaryButton: .destructive(Text("Delete"), action: {
+                    title: Text("Are You Sure?"),
+                    message: Text("Confirming this action will permanently delete all data associated with this app. This action cannot be undone."),
+                    primaryButton: .destructive(Text("Confirm Delete"), action: {
                         deleteAllAppData()
                     }),
                     secondaryButton: .cancel()
@@ -48,7 +50,7 @@ struct SettingsDataDeletionView: View {
         do {
             try modelContext.delete(model: Contract.self)
         } catch {
-            print("Failed to clear all Country and City data.")
+            print("Failed to clear all data.")
         }
         
         // Delete CloudKit records
@@ -74,8 +76,8 @@ struct SettingsDataDeletionView: View {
                         print("Error deleting records.", error)
                         return
                     }
-
-
+                    
+                    
                     print("Records successfully deleted in this zone.")
                 }
                 
@@ -89,7 +91,7 @@ struct SettingsDataDeletionView: View {
         // e.g., showAlert = true
     }
 }
-    
+
 #Preview {
     SettingsDataDeletionView()
         .modelContainer(for: Contract.self, inMemory: true)

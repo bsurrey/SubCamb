@@ -8,6 +8,21 @@
 import SwiftUI
 import SwiftData
 
+struct PlainGroupBoxStyle: GroupBoxStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack(alignment: .leading,spacing: 8) {
+            configuration.label
+            HStack {
+                Spacer()
+                configuration.content
+            }
+        }
+        .padding(8)
+        .background(Color(.systemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+}
+
 struct Total: View {
     var contracts: [Contract]
     
@@ -26,46 +41,51 @@ struct Total: View {
     var body: some View {
         VStack(content: {
             HStack {
-                GroupBox {
-                    Text(formatCurrency(amount: income, currencyCode: "EUR"))
-                } label: {
-                    Label("Income", systemImage: "plus")
-                }
+                Label("Income", systemImage: "plus")
+                    .tint(.green)
+                    .labelStyle(ColorfulIconLabelStyle(.green))
+                    .symbolRenderingMode(.hierarchical)
                 
-                GroupBox {
-                    Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
-                        .multilineTextAlignment(.leading)
-                } label: {
-                    Label("Expenses", systemImage: "minus")
-                }
+                Spacer()
+                
+                Text(formatCurrency(amount: income, currencyCode: "EUR"))
             }
             
-            Divider()
-                .padding(.bottom, 6.0)
-            
             HStack {
-                Label("Sum", systemImage: "equal")
+                Label("Expenses", systemImage: "minus")
+                    .labelStyle(ColorfulIconLabelStyle(.red))
+                
+                Spacer()
+                
+                Text(formatCurrency(amount: expenses, currencyCode: "EUR"))
+            }
+            .padding(.top, 4.0)
+
+            HStack {
+                Label("Total", systemImage: "equal")
                     .labelStyle(ColorfulIconLabelStyle(.accentColor))
                 
                 Spacer()
                 
                 Text(formatCurrency(amount: total, currencyCode: "EUR"))
+                    .bold()
             }
+            .padding(.top, 4.0)
         })
-        //.textCase(.uppercase)
-        .foregroundColor(.primary)
-        //.font(.headline)
-        
+        .padding()
     }
 }
 
 
 #Preview {
     List {
-        Total(contracts: [
-            Contract(name: "Cat Food", amount: 2999, isExpense: true),
-            Contract(name: "Dog Food", amount: 4999, isExpense: true),
-            Contract(name: "Icome", amount: 250000, isExpense: false),
-        ])
+        Section {
+            Total(contracts: [
+                Contract(name: "Cat Food", amount: 2999, isExpense: true),
+                Contract(name: "Dog Food", amount: 4999, isExpense: true),
+                Contract(name: "Icome", amount: 250000, isExpense: false),
+            ])
+            .listRowInsets(EdgeInsets())
+        }
     }
 }

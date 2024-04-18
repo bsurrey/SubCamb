@@ -10,17 +10,18 @@ import SwiftUI
 struct SettingsPrivacyPolicy: View {
     var body: some View {
         Form {
-            Text("No data is collected in this application. Everything stays on your device.")
-                .font(.body)
+            Section(header: Text("Data Collection")) {
+                Text("We value your privacy and security. All functionalities are performed locally on your device without transmitting data externally, ensuring your complete privacy.")
+            }
 
-            Text("If iCloud is enabled, your data may be stored in iCloud. For more information, please refer to Apple's iCloud Privacy Policy.")
-                .font(.body)
-                .padding(.bottom, 8)
-            
-                .navigationTitle("Privacy Policy")
+            Section(header: Text("iCloud Data")) {
+                Text("In case iCloud is enabled on your device, your data may be automatically stored in iCloud to facilitate device syncing and data backup. For specific details on how your data is managed in iCloud, please review Apple's official iCloud Privacy Policy.")
+            }
         }
+        .navigationBarTitle("Privacy Policy", displayMode: .inline)
     }
 }
+
 
 #Preview {
     SettingsPrivacyPolicy()

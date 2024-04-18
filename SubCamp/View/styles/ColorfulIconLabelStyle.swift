@@ -22,9 +22,15 @@ struct ColorfulIconLabelStyle: LabelStyle {
             configuration.title
         } icon: {
             configuration.icon
+                .symbolRenderingMode(.hierarchical)
                 .imageScale(.medium)
-                .foregroundColor(.white)
-                .background(RoundedRectangle(cornerRadius: 7 * size).frame(width: 28 * size, height: 28 * size).foregroundColor(color))
+                .foregroundColor(color)
+                .background(
+                    RoundedRectangle(
+                        cornerRadius: 7 * size)
+                    .frame(width: 28 * size, height: 28 * size)
+                    .foregroundColor(color.opacity(0.25))
+                )
         }
     }
 }

@@ -31,6 +31,8 @@ final class Contract {
     var green: Float = Color.green.toRGB().green
     var blue: Float = Color.blue.toRGB().blue
     
+    var tags: ContractTag?
+    
     init(
         name: String,
         note: String? = nil,

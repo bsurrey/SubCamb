@@ -56,7 +56,7 @@ struct SettingsView: View {
                 }
                 .listRowBackground(Color.clear)
 
-                
+                /*
                 Section {
                     // Label("iCloud status", systemImage: iCloudEnabled ? "icloud.fill" : "icloud")
                     
@@ -77,6 +77,7 @@ struct SettingsView: View {
                             .labelStyle(ColorfulIconLabelStyle(.blue))
                     }
                 }
+                 */
                 
                 Section {
                     NavigationLink {

@@ -16,16 +16,12 @@ struct ContractButtonCard: View {
     
     @ScaledMetric(relativeTo: .title2) private var itemSize: CGFloat = 100
     
-    // Function to delete the contract
     private func deleteContract() {
-        // let context = contract.modelContext
-        
         if let context = contract.modelContext {
             context.delete(contract)
         }
         presentationMode.wrappedValue.dismiss()
     }
-    
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -41,14 +37,11 @@ struct ContractButtonCard: View {
     }
     
     var body: some View {
-        
-        
         VStack(spacing: 8) {
             HStack(alignment: .center) {
                 ContractLabelIcon(symbol: contract.systemIcon ?? "exclamationmark.triangle.fill", selectedColor: contract.getColor(), size: 48, font: .callout)
                 
                 Text(contract.name)
-                //.font(.title)
                 
                 Spacer()
                 
@@ -72,7 +65,6 @@ struct ContractButtonCard: View {
                             .font(.title2)
                             .symbolRenderingMode(.hierarchical)
                             .tint(contract.getColor()).labelStyle(IconOnlyLabelStyle())
-                        
                     })
                     .menuStyle(.button)
                     .buttonStyle(.borderless)
@@ -87,6 +79,7 @@ struct ContractButtonCard: View {
                         .background(contract.getColor().opacity(0.15))
                         .foregroundColor(contract.getColor())
                         .clipShape(RoundedRectangle(cornerRadius: 4))
+
                 }
                 
                 Spacer()
@@ -106,7 +99,6 @@ struct ContractButtonCard: View {
                 }
                 
             }
-            
         }
         .buttonStyle(PlainButtonStyle())
         .tint(.blue)

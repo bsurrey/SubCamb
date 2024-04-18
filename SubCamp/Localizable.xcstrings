@@ -17,16 +17,6 @@
         }
       }
     },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
     "%@%@" : {
       "localizations" : {
         "en" : {
@@ -36,9 +26,6 @@
           }
         }
       }
-    },
-    "04. April" : {
-
     },
     "Add" : {
       "localizations" : {
@@ -85,6 +72,9 @@
     "App version %@" : {
 
     },
+    "Are You Sure?" : {
+
+    },
     "By clicking here you can create a Contract" : {
       "localizations" : {
         "de" : {
@@ -105,9 +95,6 @@
         }
       }
     },
-    "Clicking the button deletes all data in the app and if activated, in iCloud." : {
-
-    },
     "close" : {
 
     },
@@ -115,6 +102,12 @@
 
     },
     "Colored Backgrounds for Amounts" : {
+
+    },
+    "Confirm Delete" : {
+
+    },
+    "Confirming this action will permanently delete all data associated with this app. This action cannot be undone." : {
 
     },
     "Contract type" : {
@@ -142,7 +135,14 @@
       }
     },
     "Create a new Contract" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einen neuen Vertrag erstellen"
+          }
+        }
+      }
     },
     "Currency" : {
       "localizations" : {
@@ -154,19 +154,19 @@
         }
       }
     },
-    "Data export" : {
+    "Data Collection" : {
 
     },
-    "Default currency" : {
+    "Data deletion" : {
+
+    },
+    "Data export" : {
 
     },
     "Delete" : {
 
     },
-    "Delete All App Data" : {
-
-    },
-    "Delete All App Data?" : {
+    "Delete all app data" : {
 
     },
     "Delete Contract" : {
@@ -179,9 +179,6 @@
 
     },
     "Edit Contract" : {
-
-    },
-    "Enable Face ID" : {
 
     },
     "Enter your notes here..." : {
@@ -252,10 +249,13 @@
     "Here you can enter a note, like something important..." : {
 
     },
+    "iCloud Data" : {
+
+    },
     "Icon gradient" : {
 
     },
-    "If iCloud is enabled, your data may be stored in iCloud. For more information, please refer to Apple's iCloud Privacy Policy." : {
+    "In case iCloud is enabled on your device, your data may be automatically stored in iCloud to facilitate device syncing and data backup. For specific details on how your data is managed in iCloud, please review Apple's official iCloud Privacy Policy." : {
 
     },
     "Income" : {
@@ -279,7 +279,14 @@
       }
     },
     "Installment" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betrag"
+          }
+        }
+      }
     },
     "Item at %@" : {
 
@@ -295,11 +302,34 @@
         }
       }
     },
+    "Living" : {
+
+    },
+    "Living 2" : {
+
+    },
     "Look & Feel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erscheinungsbild"
+          }
+        }
+      }
+    },
+    "Menu" : {
 
     },
     "Monthly Cost" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monatliche Kosten"
+          }
+        }
+      }
     },
     "Montly" : {
       "extractionState" : "stale",
@@ -332,29 +362,75 @@
         }
       }
     },
-    "No data is collected in this application. Everything stays on your device." : {
-
-    },
     "Note" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notiz"
+          }
+        }
+      }
     },
     "Pay day" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zahltag"
+          }
+        }
+      }
     },
     "Permanently delete this contract?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diesen Vertrag dauerhaft löschen?"
+          }
+        }
+      }
     },
     "Privacy Policy" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzbestimmungen"
+          }
+        }
+      }
     },
     "Recurrence" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholung"
+          }
+        }
+      }
     },
     "Reset" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurücksetzen"
+          }
+        }
+      }
     },
     "Round icon" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rundes Symbol"
+          }
+        }
+      }
     },
     "Save" : {
       "localizations" : {
@@ -377,7 +453,14 @@
       }
     },
     "Settings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        }
+      }
     },
     "Sort Tags by" : {
       "localizations" : {
@@ -390,10 +473,27 @@
       }
     },
     "Sorting and grouping" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sortierung und Gruppierung"
+          }
+        }
+      }
+    },
+    "Tag" : {
 
     },
-    "Sum" : {
-
+    "Tapping this button will remove all data stored within the application, including records stored in iCloud if enabled." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du auf diese Schaltfläche tippst, werden alle in der Anwendung gespeicherten Daten entfernt, einschließlich der in iCloud gespeicherten Daten, falls aktiviert."
+          }
+        }
+      }
     },
     "test" : {
       "extractionState" : "stale",
@@ -406,11 +506,25 @@
         }
       }
     },
-    "This action will delete all data associated with the app. Are you sure you want to continue?" : {
-
+    "Total" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insgesamt"
+          }
+        }
+      }
     },
     "Type" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Art"
+          }
+        }
+      }
     },
     "Url" : {
 
@@ -429,10 +543,34 @@
 
     },
     "Version" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        }
+      }
+    },
+    "We value your privacy and security. All functionalities are performed locally on your device without transmitting data externally, ensuring your complete privacy." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir legen Wert auf den Schutz deiner Privatsphäre und die Sicherheit deiner Daten. Alle Funktionen werden lokal auf Ihrem Gerät ausgeführt, ohne Daten nach außen zu übertragen, so dass deine vollständige Privatsphäre gewährleistet ist."
+          }
+        }
+      }
     },
     "You can't undo this action." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion kann nicht mehr rückgängig gemacht werden."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

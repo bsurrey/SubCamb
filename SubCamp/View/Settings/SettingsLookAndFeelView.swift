@@ -24,8 +24,8 @@ struct SettingsLookAndFeelView: View {
 
     var body: some View {
         List {
-            ContractCard(contract: Contract.demoIncome)
-            ContractCard(contract: Contract.demoExpense)
+            ContractButtonCard(contract: Contract.demoIncome)
+            ContractButtonCard(contract: Contract.demoExpense)
             
             Section {
                 Toggle(isOn: $designIconGradient, label: {
@@ -36,7 +36,8 @@ struct SettingsLookAndFeelView: View {
                     Label("Round icon", systemImage: designIconRound ? "circle.fill" : "circle")
                         .labelStyle(ColorfulIconLabelStyle(.indigo))
                 })
-                Toggle(isOn: $designColoredBackgroundAmounts, label: {
+                
+                /*Toggle(isOn: $designColoredBackgroundAmounts, label: {
                     Label("Colored Backgrounds for Amounts", systemImage: designColoredBackgroundAmounts ? "rectangle.fill" :  "rectangle")
                         .labelStyle(ColorfulIconLabelStyle(.indigo))
                 })
@@ -45,7 +46,7 @@ struct SettingsLookAndFeelView: View {
                         Label("Colored Amounts", systemImage: "textformat.12")
                             .labelStyle(ColorfulIconLabelStyle(.indigo))
                     })
-                }
+                }*/
             }
             
             /*
