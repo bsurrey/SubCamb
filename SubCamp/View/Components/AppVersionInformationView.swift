@@ -21,7 +21,7 @@ struct AppVersionInformationView: View {
                     //.resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .shadow(radius: 1)
+                    .shadow(radius: 4)
             }
             
             Text("\(appName)")

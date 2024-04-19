@@ -189,8 +189,8 @@ struct CreateEditView: View {
                     chosenLocale = Locale(identifier: contract.currency ?? "eu_EU")
                     selectedContractType = contract.isExpense ? .expense : .income
                     symbol = contract.systemIcon ?? "hand.point.up.left.fill"
-                    //@State private var url: String = ""
                     selectedColor = contract.getColor()
+                    url = contract.url ?? ""
                 }
             }
         }
@@ -217,6 +217,7 @@ struct CreateEditView: View {
                 contract?.red = selectedColor.toRGB().red
                 contract?.green = selectedColor.toRGB().green
                 contract?.blue = selectedColor.toRGB().blue
+                contract?.url = url
             } else {
                 let newContract = Contract(
                     name: name,
@@ -227,7 +228,8 @@ struct CreateEditView: View {
                     systemIcon: symbol,
                     red: selectedColor.toRGB().red,
                     green: selectedColor.toRGB().green,
-                    blue: selectedColor.toRGB().blue
+                    blue: selectedColor.toRGB().blue,
+                    url: url
                 )
                 modelContext.insert(newContract)
             }

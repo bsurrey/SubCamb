@@ -56,7 +56,7 @@ struct SettingsDataDeletionView: View {
         // Delete CloudKit records
         let containers: [CKContainer] = [
             CKContainer.default(),
-            .init(identifier: "iCloud.com.benjaminsurrey.subcamp"),
+            .init(identifier: "iCloud.com.benjaminsurrey.contracts"),
         ]
         
         for container in containers {

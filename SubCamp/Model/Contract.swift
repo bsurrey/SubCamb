@@ -24,6 +24,7 @@ final class Contract {
     var isExpense: Bool = true
     var systemIcon: String?
     var payDay: Date?
+    var url: String?
     
     var recurrence: ContractRecurrence?
 
@@ -47,7 +48,8 @@ final class Contract {
         green: Float = Color.blue.toRGB().green,
         blue: Float = Color.blue.toRGB().blue,
         
-        recurrence: ContractRecurrence = .monthly
+        recurrence: ContractRecurrence = .monthly,
+        url: String = ""
     ) {
         self.name = name
         self.note = note
@@ -63,6 +65,8 @@ final class Contract {
         self.red = red
         self.green = green
         self.blue = blue
+        
+        self.url = url
     }
     
     func getColor() -> Color {
