@@ -88,6 +88,7 @@ struct CreateEditView: View {
                 })
                 
                 Section(content: {
+                    /*
                     Picker(selection: $chosenLocale) {
                         ForEach(locales, id: \.self) {
                             if let cc = $0.currency?.identifier, let sym = $0.currencySymbol {
@@ -99,6 +100,9 @@ struct CreateEditView: View {
                         Label("Currency", systemImage: "eurosign")
                             .labelStyle(ColorfulIconLabelStyle(selectedColor))
                     }
+                     */
+                    
+                    
                     HStack {
                         Label("Installment", systemImage: "creditcard")
                             .labelStyle(ColorfulIconLabelStyle(selectedColor))
@@ -109,6 +113,7 @@ struct CreateEditView: View {
                     }
                 })
                 
+                /*
                 Section {
                     Button(action: {showTagPicker.toggle()}, label: {
                         Label("Tag", systemImage: "tag")
@@ -118,6 +123,7 @@ struct CreateEditView: View {
                         TagPickerView(selectedTags: $selectedTags)
                     }
                 }
+                 */
                 
                 Section(content: {
                     DatePicker(selection: $firstPayment, displayedComponents: [.date]) {
@@ -144,7 +150,7 @@ struct CreateEditView: View {
                     
                     ZStack(alignment: .topLeading) {
                         if note.isEmpty {
-                            Text("Here you can enter a note, like something important...")
+                            Text("Note")
                                 .foregroundColor(.gray)
                                 .padding(.top, 8)
                                 .padding(.leading, 5)

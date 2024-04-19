@@ -7,16 +7,6 @@
     "%@" : {
 
     },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
     "%@%@" : {
       "localizations" : {
         "en" : {
@@ -98,12 +88,6 @@
     "close" : {
 
     },
-    "Colored Amounts" : {
-
-    },
-    "Colored Backgrounds for Amounts" : {
-
-    },
     "Confirm Delete" : {
 
     },
@@ -145,6 +129,7 @@
       }
     },
     "Currency" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -244,9 +229,6 @@
       }
     },
     "Hello, World!" : {
-
-    },
-    "Here you can enter a note, like something important..." : {
 
     },
     "iCloud Data" : {
